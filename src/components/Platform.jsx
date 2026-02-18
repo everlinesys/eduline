@@ -49,7 +49,7 @@ export default function Platform() {
             </div>
           </div>
 
-          <div className="order-1 lg:order-2 relative">
+          <div className="order-1 lg:order-2 relative overflow-hidden rounded-2xl border border-slate-200 shadow-2xl bg-white">
             {/* Decorative Background Glow */}
             <div className="absolute -inset-10 bg-emerald-200/40 rounded-full blur-3xl opacity-50"></div>
             
@@ -76,9 +76,9 @@ export default function Platform() {
             
             <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-2xl bg-white">
               <div className="bg-slate-50 border-b border-slate-200 px-4 py-3 flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-slate-300"></div>
-                <div className="w-3 h-3 rounded-full bg-slate-300"></div>
-                <div className="w-3 h-3 rounded-full bg-slate-300"></div>
+                <div className="w-3 h-3 rounded-full bg-red-300"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-300"></div>
+                <div className="w-3 h-3 rounded-full bg-green-300"></div>
               </div>
               <img
                 src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400"

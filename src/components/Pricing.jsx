@@ -63,6 +63,23 @@ const plans = [
 ];
 
 export default function Pricing() {
+  const sendToWhatsApp = (plan) => {
+    const phone = "919400690911";
+
+    const message = encodeURIComponent(
+      `Hello EduLine team 👋
+
+I am interested in the *${plan.name}* plan.
+Price: ${plan.price}${plan.period}
+Students: ${plan.students}
+
+Please share details and setup process.`
+    );
+
+    window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+  };
+
+
   return (
     <section className="py-32 bg-white" id="Pricing">
       <div className="max-w-7xl mx-auto px-6">
@@ -120,6 +137,8 @@ export default function Pricing() {
 
               {/* CTA */}
               <button
+                onClick={() => sendToWhatsApp(plan)}
+
                 className={`w-full py-3 rounded-xl font-bold transition
                   ${plan.highlight
                     ? "bg-emerald-600 text-white hover:bg-emerald-700"

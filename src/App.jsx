@@ -7,14 +7,16 @@ import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import Platform from './components/Platform';
 import DemoVideo from './components/DemoVideo';
+import WhyEduline from './components/WhyEduline';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900">
+    <div className="min-h-screen bg-white font-sans text-slate-900 w-100vw overflow-x-hidden">
       <Navbar />
       <Hero />
       <DemoVideo />
       <Features />
+      <WhyEduline/>
       <Platform />
       <CTA />
       <Pricing />

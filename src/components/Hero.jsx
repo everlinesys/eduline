@@ -19,7 +19,7 @@ const WhatsAppWidget = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end">
+    <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-center gap-4">
       {/* Chat Bubble */}
       {isOpen && (
         <div className="mb-4 w-72 md:w-80 bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
@@ -97,7 +97,7 @@ export default function Hero() {
         <div className="absolute top-0 right-0 -z-10 w-1/2 h-1/2 bg-emerald-50/60 blur-[120px] rounded-full" />
         <div className="absolute bottom-0 left-0 -z-10 w-1/4 h-1/4 bg-blue-50/40 blur-[100px] rounded-full" />
 
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-left">
 
           {/* LEFT CONTENT */}
           <div className="z-10">
@@ -149,7 +149,7 @@ export default function Hero() {
                     <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center text-white text-xs font-bold">ED</div>
                     <span className="font-bold text-slate-800">Your Academy</span>
                   </div>
-                  <div className="w-8 h-8 rounded-full bg-slate-100 border border-slate-200"></div>
+                  <div className="w-8 h-8 rounded-full bg-emerald-500 border border-slate-200"></div>
                 </div>
 
                 <div className="rounded-2xl overflow-hidden mb-6">

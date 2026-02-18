@@ -67,7 +67,7 @@ export default function Features() {
     <section className="relative py-28 bg-white overflow-hidden" id="Solutions">
 
       {/* Background Hero Shape */}
-      <div className="absolute -top-[5%] left-1/2 -translate-x-1/2 w-[140%] h-[100vh] md:h-[150vh] bg-emerald-600 rotate-[-4deg] shadow-2xl"></div>
+      <div className="absolute -top-[5%] left-1/2 -translate-x-1/2 w-[140%] h-[150vh] md:h-[150vh] bg-emerald-600 rotate-[-4deg] shadow-2xl"></div>
 
       <div className="relative max-w-7xl mx-auto px-6">
 

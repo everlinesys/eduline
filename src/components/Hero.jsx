@@ -54,7 +54,7 @@ const WhatsAppWidget = () => {
 
           {/* Footer / CTA */}
           <div className="p-4 bg-white">
-            <button 
+            <button
               onClick={handleWhatsAppRedirect}
               className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all"
             >
@@ -70,12 +70,11 @@ const WhatsAppWidget = () => {
           setIsOpen(!isOpen);
           setShowBadge(false);
         }}
-        className={`relative p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 ${
-          isOpen ? 'bg-slate-800 text-white' : 'bg-emerald-500 text-white'
-        }`}
+        className={`relative p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 ${isOpen ? 'bg-slate-800 text-white' : 'bg-emerald-500 text-white'
+          }`}
       >
         {isOpen ? <X size={28} /> : <MessageCircle size={28} />}
-        
+
         {showBadge && !isOpen && (
           <span className="absolute -top-1 -right-1 flex h-5 w-5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
@@ -92,7 +91,7 @@ export default function Hero() {
   return (
     <>
       <section className="min-w-[100vw] min-h-[90vh] relative pt-28 pb-12 flex items-center overflow-hidden bg-white">
-        
+
         {/* Modern Gradient Accents */}
         <div className="absolute top-0 right-0 -z-10 w-1/2 h-1/2 bg-emerald-50/60 blur-[120px] rounded-full" />
         <div className="absolute bottom-0 left-0 -z-10 w-1/4 h-1/4 bg-blue-50/40 blur-[100px] rounded-full" />
@@ -114,21 +113,41 @@ export default function Hero() {
             </h1>
 
             <p className="text-xl text-slate-500 mb-10 max-w-md leading-relaxed">
-              EduLine is the all-in-one builder to launch your own branded e-learning store. 
+              EduLine is the all-in-one builder to launch your own branded e-learning store.
               <strong> Own your students, your data, and your future.</strong>
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <button className="bg-emerald-600 text-white px-10 py-5 rounded-2xl font-bold hover:bg-emerald-700 transition-all shadow-xl shadow-emerald-200 flex items-center gap-3 text-lg">
-                Get Started for Free <ArrowRight size={20} />
-              </button>
+
+              {/* PRIMARY — WHATSAPP */}
+              <a
+                href="https://wa.me/919400690911?text=Hello%20EduLine%20team%20👋%20I%20want%20to%20get%20started%20with%20my%20own%20branded%20teaching%20platform."
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "white" }} className="bg-emerald-600 text-white px-10 py-5 rounded-2xl font-bold hover:bg-emerald-700 transition-all shadow-xl shadow-emerald-200 flex items-center gap-3 text-lg"
+              >
+                Get Started for Free
+                <ArrowRight size={20} />
+              </a>
+
+              {/* SECONDARY — SEE DEMO */}
+              <a
+                href="https://edulinedemo.everlinesys.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline px-10 py-5 font-bold transition-all flex items-center gap-3 text-lg"
+                style={{ color: "emerald-600" }} >
+                See Demo
+              </a>
+
             </div>
+
           </div>
 
           {/* RIGHT SIDE (Mockup) */}
           <div className="z-10 relative group lg:max-w-[300px] xl:max-w-[350px] mx-auto">
             <div className="absolute -inset-4 bg-emerald-500/10 rounded-[2rem] blur-3xl opacity-50 group-hover:opacity-80 transition duration-1000"></div>
-            
+
             <div className="relative bg-white border border-slate-200 rounded-[2rem] shadow-2xl overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
               {/* Browser Header */}
               <div className="h-10 bg-slate-50 border-b border-slate-100 flex items-center px-5 gap-2">

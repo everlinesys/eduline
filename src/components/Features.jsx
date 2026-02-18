@@ -77,8 +77,8 @@ export default function Features() {
             Engineered for Professional Educators
           </div>
           <h2 className="text-3xl md:text-6xl font-bold text-white mb-8  leading-[1.05]">
-            Stop renting space on marketplaces.
-            <span className="block text-slate-900 mt-2">Own your infrastructure.</span>
+            Everything you need
+            <span className="block text-slate-900 mt-2">to run your teaching business</span>
           </h2>
           <p className="text-xl text-emerald-50 leading-relaxed font-medium max-w-2xl opacity-90">
             EduLine isn't just a host—it's your private campus. Everything you need to manage 100 or 100,000 students under your own brand name.

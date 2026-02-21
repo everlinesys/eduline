@@ -90,7 +90,7 @@ const WhatsAppWidget = () => {
 export default function Hero() {
   return (
     <>
-      <section className="min-w-[100vw] min-h-[90vh] relative pt-28 pb-12 flex items-center overflow-hidden bg-white">
+      <section className=" min-w-[100vw] min-h-[90vh] relative pt-28 pb-12 flex items-center overflow-hidden bg-white">
 
         {/* Modern Gradient Accents */}
         <div className="absolute top-0 right-0 -z-10 w-1/2 h-1/2 bg-emerald-50/60 blur-[120px] rounded-full" />
@@ -135,7 +135,7 @@ export default function Hero() {
                 href="https://edulinedemo.everlinesys.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline px-10 py-5 font-bold transition-all flex items-center gap-3 text-lg"
+                className="underline  py-5 font-bold transition-all flex items-center gap-3 text-lg"
                 style={{ color: "emerald-600" }} >
                 See Demo
               </a>

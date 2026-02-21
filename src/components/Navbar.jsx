@@ -43,9 +43,10 @@ export default function Navbar() {
 
         {/* ===== MOBILE TOGGLE ===== */}
         <button
-          className="md:hidden p-2 text-slate-600 hover:bg-slate-50 rounded-lg transition"
+          className="md:hidden p-2 text-emerald-600 hover:bg-slate-50 rounded-lg transition"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
+          style={{background:"transparent", border:"none", color:"#009966"  }}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

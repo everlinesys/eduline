@@ -26,24 +26,38 @@ export default function DemoVideo() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="relative group"
         >
-          
+
           {/* Glow */}
           <div className="absolute -inset-4 bg-gradient-to-tr from-emerald-100 to-blue-50 blur-3xl opacity-60" />
 
           {/* Frame */}
           <div className="relative overflow-hidden shadow-[0_32px_64px_-15px_rgba(0,0,0,0.2)] border border-slate-100">
 
-            <div className="w-full aspect-video">
+            {/* <div className="w-full aspect-video">
               <iframe
-                src="https://iframe.mediadelivery.net/play/594138/f2063ed6-271b-4210-bfbf-e4510382acf2"
+                src="https://iframe.mediadelivery.net/play/594138/231392af-8a40-4586-9879-897d3f02b853"
                 loading="lazy"
                 title="Eduline Demo"
                 allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                 allowFullScreen
-                className="min-h-120 w-full h-full border-0"
+                className="min-h-100 md:min-h-720 w-full  border-0"
+              ></iframe>
+            </div> */}
+            <div style={{ position: "relative", paddingTop: "56.25%" }}>
+              <iframe
+                src="https://player.mediadelivery.net/embed/594138/231392af-8a40-4586-9879-897d3f02b853?autoplay=false&loop=false&muted=false&preload=false&responsive=true"
+                loading="lazy"
+                style={{
+                  border: 0,
+                  position: "absolute",
+                  top: 0,
+                  height: "100%",
+                  width: "100%",
+                }}
+                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                allowFullScreen
               ></iframe>
             </div>
-
             <div className="absolute inset-0 pointer-events-none border border-white/10" />
           </div>
 

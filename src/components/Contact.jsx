@@ -15,7 +15,7 @@ export default function Contact() {
     };
 
     return (
-        <section className="relative py-32 bg-white overflow-hidden" id="Contact">
+        <section className="relative py-32 md:px-10 bg-white overflow-hidden" id="Contact">
             {/* Background Accent */}
             <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50/50 -skew-x-12 translate-x-1/2 pointer-events-none" />
 

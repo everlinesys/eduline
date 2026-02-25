@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 const plans = [
   {
     name: "Essential",
-    price: "₹1,200",
+    price: "₹2,500",
     period: "/mo",
     students: "Up to 100 active students",
     features: [

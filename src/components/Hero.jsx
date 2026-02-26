@@ -1,5 +1,6 @@
 import { ArrowRight, Sparkles, MessageCircle, X, Send } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import FreeTrialWidget from './FreeTrialWidget';
 
 // --- WHATSAPP WIDGET COMPONENT ---
 const WhatsAppWidget = () => {
@@ -190,6 +191,7 @@ export default function Hero() {
       </section>
 
       {/* FIXED WIDGET */}
+      <FreeTrialWidget />
       <WhatsAppWidget />
     </>
   );

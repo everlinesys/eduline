@@ -60,7 +60,7 @@ export default function Onboard() {
     };
 
     const createAcademy = async () => {
-        console.log("nnm", JSON.stringify(import.meta.env))
+       
         if (!validate()) return;
 
         setLoading(true);

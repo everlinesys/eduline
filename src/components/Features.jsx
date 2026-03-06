@@ -64,7 +64,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="relative py-28 bg-white overflow-hidden" id="Solutions">
+    <section className="md:px-30 relative py-28 bg-white overflow-hidden" id="Solutions">
 
       {/* Background Hero Shape */}
       <div className="absolute -top-[5%] left-1/2 -translate-x-1/2 w-[140%] h-[150vh] md:h-[150vh] bg-blue-600 rotate-[-4deg] shadow-2xl"></div>

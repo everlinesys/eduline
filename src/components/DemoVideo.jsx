@@ -16,8 +16,8 @@ export default function DemoVideo() {
   }, []);
 
   return (
-    <section className="py-24 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="md:px-30 py-24 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 rounded-sm">
 
         <motion.div
           ref={ref}

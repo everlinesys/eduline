@@ -81,7 +81,7 @@ Please share details and setup process.`
 
 
   return (
-    <section className="py-32 bg-white" id="Pricing">
+    <section className=" md:px-30 py-32 bg-white" id="Pricing">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}

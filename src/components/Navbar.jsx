@@ -1,11 +1,13 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed w-full z-50 top-0 bg-white/80 backdrop-blur-xl border-b border-slate-100">
+    <nav className="md:px-30 fixed w-full z-50 top-0 bg-white/80 backdrop-blur-xl border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
         {/* ===== BRAND ===== */}
@@ -35,9 +37,13 @@ export default function Navbar() {
           </a>
 
           <div className="flex items-center gap-3 ml-4">
-            <button className="bg-blue-600 text-white px-5 py-2.5 rounded-full hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-100 transition active:scale-95">
-              Start Building
-            </button>
+            <Link
+              to="/onboard"
+              className=" sm:w-auto bg-blue-600 text-white px-3 py-2 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-200 flex items-center justify-center gap-3 "
+              style={{ color: "white" }} >
+              Get Started for Free
+              <ArrowRight size={20} />
+            </Link>
           </div>
         </div>
 
@@ -46,7 +52,7 @@ export default function Navbar() {
           className="md:hidden p-2 text-blue-600 hover:bg-slate-50 rounded-lg transition"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
-          style={{background:"transparent", border:"none", color:"#1967ba"  }}
+          style={{ background: "transparent", border: "none", color: "#1967ba" }}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -54,11 +60,10 @@ export default function Navbar() {
 
       {/* ===== MOBILE MENU ===== */}
       <div
-        className={`md:hidden absolute top-16 left-0 w-full bg-white border-b border-slate-100 transition-all duration-300 ${
-          isOpen
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-4 pointer-events-none"
-        }`}
+        className={`md:hidden absolute top-16 left-0 w-full bg-white border-b border-slate-100 transition-all duration-300 ${isOpen
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 -translate-y-4 pointer-events-none"
+          }`}
       >
         <div className="flex flex-col p-6 gap-6 shadow-xl shadow-slate-200/50">
 
@@ -88,9 +93,13 @@ export default function Navbar() {
 
           <hr className="border-slate-100" />
 
-          <button className="w-full py-3 bg-blue-600 text-white font-bold rounded-xl shadow-lg shadow-blue-100">
-            Start Building
-          </button>
+          <Link
+            to="/onboard"
+            className="w-full sm:w-auto bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-200 flex items-center justify-center gap-3 text-lg"
+            style={{ color: "white" }} >
+            Get Started for Free
+            <ArrowRight size={20} />
+          </Link>
         </div>
       </div>
     </nav>

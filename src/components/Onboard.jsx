@@ -9,9 +9,13 @@ import {
 } from "lucide-react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import axios from "axios";
+import { useEffect } from "react";
 
 export default function Onboard() {
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     const [form, setForm] = useState({
         phone: "",
         academy: "",
@@ -56,32 +60,49 @@ export default function Onboard() {
     };
 
     const createAcademy = async () => {
-
+        console.log("nnm", JSON.stringify(import.meta.env))
         if (!validate()) return;
 
         setLoading(true);
 
-        const payload = { ...form };
+        try {
 
-        console.log("CREATE ACADEMY:", payload);
+            await axios.post(
+                `${import.meta.env.VITE_MAIL_API}/send-now`,
+                {
+                    to: "azhar.subair.2@gmail.com",
+                    subject: "New Eduline Academy Request",
+                    text: `New Academy Signup
 
-        // simulate API call
-        setTimeout(() => {
-            setLoading(false);
+Phone: ${form.phone}
+Academy: ${form.academy}
+Type: ${form.type}
+Subdomain: ${form.subdomain}.eduline.com`
+                },
+                {
+                    headers: {
+                        "x-api-key": import.meta.env.VITE_MAIL_API_KEY
+                    }
+                }
+            );
+
             setSubmitted(true);
-        }, 1500);
 
-        /*
-        fetch("/api/create-academy", {
-          method: "POST",
-          headers: {"Content-Type":"application/json"},
-          body: JSON.stringify(payload)
-        })
-        */
+        } catch (error) {
+
+            console.error(error);
+
+            alert("Something went wrong. Please try again.");
+
+        } finally {
+
+            setLoading(false);
+
+        }
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white text-black flex flex-col items-center px-6">
+        <div className="min-h-screen w-screen bg-gradient-to-br from-blue-50 to-white text-black flex flex-col items-center ">
 
             <Navbar />
 

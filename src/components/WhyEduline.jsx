@@ -35,7 +35,7 @@ export default function WhyEduline() {
   ];
 
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="md:px-30 py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* HEADER */}
@@ -55,9 +55,9 @@ export default function WhyEduline() {
 
           {/* Header Row */}
           <div className="grid grid-cols-3 bg-slate-900 text-white text-sm font-bold uppercase tracking-wider">
-            <div className="p-6">Feature</div>
-            <div className="p-6 text-blue-400">EduLine</div>
-            <div className="p-6 text-slate-400">Other Platforms</div>
+            <div className="p-4">Feature</div>
+            <div className="p-4 text-blue-400">EduLine</div>
+            <div className="p-4 text-slate-400">Other Platforms</div>
           </div>
 
           {/* Rows */}
@@ -66,16 +66,16 @@ export default function WhyEduline() {
               key={i}
               className="grid grid-cols-3 border-t border-slate-100 text-sm"
             >
-              <div className="p-6 font-semibold text-slate-900">
+              <div className="p-4 font-semibold text-slate-900">
                 {item.title}
               </div>
 
-              <div className="p-6 flex items-start gap-3 text-blue-700">
+              <div className="p-4 flex items-start gap-3 text-blue-700">
                 <Check size={18} />
                 <span>{item.eduline}</span>
               </div>
 
-              <div className="p-6 flex items-start gap-3 text-slate-500">
+              <div className="p-4 flex items-start gap-3 text-slate-500">
                 <X size={18} />
                 <span>{item.others}</span>
               </div>

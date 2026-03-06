@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-
+import { Link } from "react-router-dom";
 export default function CTA() {
 
   const sendWhatsApp = (type) => {
@@ -36,13 +36,14 @@ export default function CTA() {
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
 
-            <button
-              onClick={() => sendWhatsApp("start")}
-              className="bg-white text-blue-700 px-8 py-4 rounded-2xl font-bold hover:bg-blue-50 transition flex items-center justify-center gap-2"
+            <Link
+              to="/onboard"
+              style={{ color: "white" }}
+              className="bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-200 flex items-center gap-3 text-lg"
             >
               Get Started for Free
-              <ArrowRight size={18} />
-            </button>
+              <ArrowRight size={20} />
+            </Link>
 
             <button
               onClick={() => sendWhatsApp("demo")}

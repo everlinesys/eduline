@@ -1,6 +1,6 @@
 import { ArrowRight, Sparkles, MessageCircle, X, Send } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import FreeTrialWidget from './FreeTrialWidget';
+import { Link } from "react-router-dom";
 
 // --- WHATSAPP WIDGET COMPONENT ---
 const WhatsAppWidget = () => {
@@ -28,7 +28,7 @@ const WhatsAppWidget = () => {
           <div className="bg-blue-600 p-4 text-white flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-10 h-10 rounded-full bg-blue-700/20 flex items-center justify-center" style={{background:"blue"}}>
+                <div className="w-10 h-10 rounded-full bg-blue-700/20 flex items-center justify-center" style={{ background: "blue" }}>
                   <MessageCircle size={20} />
                 </div>
                 <span className="absolute bottom-0 right-0 w-3 h-3 bg-blue-400 border-2 border-blue-600 rounded-full"></span>
@@ -164,15 +164,14 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4">
 
               {/* PRIMARY — WHATSAPP */}
-              <a
-                href="https://wa.me/919400690911?text=Hello%20EduLine%20team%20👋%20I%20want%20to%20get%20started%20with%20my%20own%20branded%20teaching%20platform."
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: "white" }} className="bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-200 flex items-center gap-3 text-lg"
+              <Link
+                to="/onboard"
+                style={{ color: "white" }}
+                className="bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-200 flex items-center gap-3 text-lg"
               >
                 Get Started for Free
                 <ArrowRight size={20} />
-              </a>
+              </Link>
 
               {/* SECONDARY — SEE DEMO */}
               <a

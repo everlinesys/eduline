@@ -191,7 +191,7 @@ export default function Hero() {
       </section>
 
       {/* FIXED WIDGET */}
-      <FreeTrialWidget />
+      {/* <FreeTrialWidget /> */}
       <WhatsAppWidget />
     </>
   );

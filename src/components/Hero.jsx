@@ -25,13 +25,13 @@ const WhatsAppWidget = () => {
       {isOpen && (
         <div className="mb-4 w-72 md:w-80 bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
           {/* Header */}
-          <div className="bg-emerald-600 p-4 text-white flex items-center justify-between">
+          <div className="bg-blue-600 p-4 text-white flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-blue-700/20 flex items-center justify-center" style={{background:"blue"}}>
                   <MessageCircle size={20} />
                 </div>
-                <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-emerald-600 rounded-full"></span>
+                <span className="absolute bottom-0 right-0 w-3 h-3 bg-blue-400 border-2 border-blue-600 rounded-full"></span>
               </div>
               <div>
                 <p className="font-bold text-sm">EduLine Support</p>
@@ -57,7 +57,7 @@ const WhatsAppWidget = () => {
           <div className="p-4 bg-white">
             <button
               onClick={handleWhatsAppRedirect}
-              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all"
             >
               Start Chat <Send size={16} />
             </button>
@@ -71,7 +71,7 @@ const WhatsAppWidget = () => {
           setIsOpen(!isOpen);
           setShowBadge(false);
         }}
-        className={`relative p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 ${isOpen ? 'bg-slate-800 text-white' : 'bg-emerald-500 text-white'
+        className={`relative p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 ${isOpen ? 'bg-slate-800 text-white' : 'bg-blue-500 text-white'
           }`}
       >
         {isOpen ? <X size={28} /> : <MessageCircle size={28} />}
@@ -94,23 +94,66 @@ export default function Hero() {
       <section className=" min-w-[100vw] min-h-[90vh] relative pt-28 pb-12 flex items-center overflow-hidden bg-white">
 
         {/* Modern Gradient Accents */}
-        <div className="absolute top-0 right-0 -z-10 w-1/2 h-1/2 bg-emerald-50/60 blur-[120px] rounded-full" />
+        <div className="absolute top-0 right-0 -z-10 w-1/2 h-1/2 bg-blue-50/60 blur-[120px] rounded-full" />
         <div className="absolute bottom-0 left-0 -z-10 w-1/4 h-1/4 bg-blue-50/40 blur-[100px] rounded-full" />
 
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-left">
 
+
+
+          {/* mobile only / same right side componnet but in mobile is on top  */}
+          <div className="mobile-only z-10 relative group lg:max-w-[300px] xl:max-w-[350px] mx-auto ">
+            <div className="absolute -inset-4 bg-blue-500/10 rounded-[2rem] blur-3xl opacity-50 group-hover:opacity-80 transition duration-1000"></div>
+
+            <div className="relative bg-white border border-slate-200 rounded-[2rem] shadow-2xl overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
+              {/* Browser Header */}
+
+
+              <div className="h-10 bg-slate-50 border-b border-slate-100 flex items-center px-5 gap-2">
+                <div className="flex gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-blue-400"></div>
+                </div>
+                <div className="mx-auto bg-white border border-slate-200 px-4 py-1 rounded-full text-[10px] text-slate-400 font-medium">
+                  academy.yourbrand.com
+                </div>
+              </div>
+
+              {/* Mockup UI Content */}
+              <div className="p-8">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-xs font-bold">ED</div>
+                    <span className="font-bold text-slate-800">Your Academy</span>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-blue-500 border border-slate-200"></div>
+                </div>
+
+                <div className="rounded-2xl overflow-hidden mb-6">
+                  <img src="https://images.unsplash.com/photo-1631203928493-a4e4eb2b8da1?q=80&w=869" alt="Course" className="w-full aspect-video object-cover" />
+                </div>
+
+                <div className="space-y-2 mb-8">
+                  <h3 className="text-lg font-bold text-slate-900">Digital Masterclass</h3>
+                  <p className="text-sm text-slate-500 italic">42 lessons • 12,403 students enrolled</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
           {/* LEFT CONTENT */}
           <div className="z-10">
-            <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-100 px-4 py-2 rounded-full mb-8 shadow-sm">
-              <Sparkles size={14} className="text-emerald-600" />
-              <span className="text-xs font-bold text-emerald-700 uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 px-4 py-2 rounded-full mb-8 shadow-sm">
+              <Sparkles size={14} className="text-blue-600" />
+              <span className="text-xs font-bold text-blue-700 uppercase tracking-widest">
                 The Infrastructure for Educators
               </span>
             </div>
 
             <h1 className="text-6xl md:text-7xl font-extrabold mb-8 text-slate-900 tracking-tight leading-[1.1]">
               Brand your <br />
-              <span className="text-emerald-600">teaching.</span>
+              <span className="text-blue-600">teaching.</span>
             </h1>
 
             <p className="text-xl text-slate-500 mb-10 max-w-md leading-relaxed">
@@ -125,7 +168,7 @@ export default function Hero() {
                 href="https://wa.me/919400690911?text=Hello%20EduLine%20team%20👋%20I%20want%20to%20get%20started%20with%20my%20own%20branded%20teaching%20platform."
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: "white" }} className="bg-emerald-600 text-white px-10 py-5 rounded-2xl font-bold hover:bg-emerald-700 transition-all shadow-xl shadow-emerald-200 flex items-center gap-3 text-lg"
+                style={{ color: "white" }} className="bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-200 flex items-center gap-3 text-lg"
               >
                 Get Started for Free
                 <ArrowRight size={20} />
@@ -137,7 +180,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline  py-5 font-bold transition-all flex items-center gap-3 text-lg"
-                style={{ color: "emerald-600" }} >
+                style={{ color: "blue-600" }} >
                 See Demo
               </a>
 
@@ -146,16 +189,18 @@ export default function Hero() {
           </div>
 
           {/* RIGHT SIDE (Mockup) */}
-          <div className="z-10 relative group lg:max-w-[300px] xl:max-w-[350px] mx-auto">
-            <div className="absolute -inset-4 bg-emerald-500/10 rounded-[2rem] blur-3xl opacity-50 group-hover:opacity-80 transition duration-1000"></div>
+          <div className="z-10 relative group lg:max-w-[300px] xl:max-w-[350px] mx-auto hidden">
+            <div className="absolute -inset-4 bg-blue-500/10 rounded-[2rem] blur-3xl opacity-50 group-hover:opacity-80 transition duration-1000"></div>
 
             <div className="relative bg-white border border-slate-200 rounded-[2rem] shadow-2xl overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
               {/* Browser Header */}
+
+
               <div className="h-10 bg-slate-50 border-b border-slate-100 flex items-center px-5 gap-2">
                 <div className="flex gap-1.5">
                   <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
                   <div className="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-blue-400"></div>
                 </div>
                 <div className="mx-auto bg-white border border-slate-200 px-4 py-1 rounded-full text-[10px] text-slate-400 font-medium">
                   academy.yourbrand.com
@@ -166,10 +211,10 @@ export default function Hero() {
               <div className="p-8">
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center text-white text-xs font-bold">ED</div>
+                    <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-xs font-bold">ED</div>
                     <span className="font-bold text-slate-800">Your Academy</span>
                   </div>
-                  <div className="w-8 h-8 rounded-full bg-emerald-500 border border-slate-200"></div>
+                  <div className="w-8 h-8 rounded-full bg-blue-500 border border-slate-200"></div>
                 </div>
 
                 <div className="rounded-2xl overflow-hidden mb-6">
@@ -181,7 +226,7 @@ export default function Hero() {
                   <p className="text-sm text-slate-500 italic">42 lessons • 12,403 students enrolled</p>
                 </div>
 
-                <div className="w-full py-4 bg-emerald-600 rounded-xl text-center text-white font-bold shadow-lg shadow-emerald-100">
+                <div className="w-full py-4 bg-blue-600 rounded-xl text-center text-white font-bold shadow-lg shadow-blue-100">
                   Enroll Now
                 </div>
               </div>

@@ -41,7 +41,7 @@ export default function WhyEduline() {
         {/* HEADER */}
         <div className="max-w-3xl mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
-            Why Educators Choose <span className="text-emerald-600">EduLine</span>
+            Why Educators Choose <span className="text-blue-600">EduLine</span>
           </h2>
 
           <p className="text-lg text-slate-600">
@@ -56,7 +56,7 @@ export default function WhyEduline() {
           {/* Header Row */}
           <div className="grid grid-cols-3 bg-slate-900 text-white text-sm font-bold uppercase tracking-wider">
             <div className="p-6">Feature</div>
-            <div className="p-6 text-emerald-400">EduLine</div>
+            <div className="p-6 text-blue-400">EduLine</div>
             <div className="p-6 text-slate-400">Other Platforms</div>
           </div>
 
@@ -70,7 +70,7 @@ export default function WhyEduline() {
                 {item.title}
               </div>
 
-              <div className="p-6 flex items-start gap-3 text-emerald-700">
+              <div className="p-6 flex items-start gap-3 text-blue-700">
                 <Check size={18} />
                 <span>{item.eduline}</span>
               </div>

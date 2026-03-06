@@ -10,32 +10,32 @@ export default function Navbar() {
 
         {/* ===== BRAND ===== */}
         <a href="/" className="flex items-center gap-3">
-          <img
+          {/* <img
             src="/logo.png"
             alt="EduLine Logo"
             className="h-6 w-6 object-contain"
-          />
+          /> */}
 
           {/* Premium Brand Font */}
-          <span className="text-xl font-extrabold tracking-tight text-emerald-600">
+          <span className="text-xl font-extrabold tracking-tight text-blue-600">
             EDULINE
           </span>
         </a>
 
         {/* ===== DESKTOP NAV ===== */}
         <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
-          <a href="#Platform" className="hover:text-emerald-600 transition">
+          <a href="#Platform" className="hover:text-blue-600 transition">
             Platform
           </a>
-          <a href="#Solutions" className="hover:text-emerald-600 transition">
+          <a href="#Solutions" className="hover:text-blue-600 transition">
             Solutions
           </a>
-          <a href="#Pricing" className="hover:text-emerald-600 transition">
+          <a href="#Pricing" className="hover:text-blue-600 transition">
             Pricing
           </a>
 
           <div className="flex items-center gap-3 ml-4">
-            <button className="bg-emerald-600 text-white px-5 py-2.5 rounded-full hover:bg-emerald-700 hover:shadow-lg hover:shadow-emerald-100 transition active:scale-95">
+            <button className="bg-blue-600 text-white px-5 py-2.5 rounded-full hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-100 transition active:scale-95">
               Start Building
             </button>
           </div>
@@ -43,10 +43,10 @@ export default function Navbar() {
 
         {/* ===== MOBILE TOGGLE ===== */}
         <button
-          className="md:hidden p-2 text-emerald-600 hover:bg-slate-50 rounded-lg transition"
+          className="md:hidden p-2 text-blue-600 hover:bg-slate-50 rounded-lg transition"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
-          style={{background:"transparent", border:"none", color:"#009966"  }}
+          style={{background:"transparent", border:"none", color:"#1967ba"  }}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -64,7 +64,7 @@ export default function Navbar() {
 
           <a
             href="#Platform"
-            className="text-base font-semibold text-emerald-600"
+            className="text-base font-semibold text-blue-600"
             onClick={() => setIsOpen(false)}
           >
             Platform
@@ -72,7 +72,7 @@ export default function Navbar() {
 
           <a
             href="#Solutions"
-            className="text-base font-semibold text-emerald-600"
+            className="text-base font-semibold text-blue-600"
             onClick={() => setIsOpen(false)}
           >
             Solutions
@@ -80,7 +80,7 @@ export default function Navbar() {
 
           <a
             href="#Pricing"
-            className="text-base font-semibold text-emerald-600"
+            className="text-base font-semibold text-blue-600"
             onClick={() => setIsOpen(false)}
           >
             Pricing
@@ -88,7 +88,7 @@ export default function Navbar() {
 
           <hr className="border-slate-100" />
 
-          <button className="w-full py-3 bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-100">
+          <button className="w-full py-3 bg-blue-600 text-white font-bold rounded-xl shadow-lg shadow-blue-100">
             Start Building
           </button>
         </div>

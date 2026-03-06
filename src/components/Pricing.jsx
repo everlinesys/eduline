@@ -102,7 +102,7 @@ Please share details and setup process.`
               key={idx}
               className={`relative rounded-3xl border p-8 flex flex-col
                 ${plan.highlight
-                  ? "border-emerald-600 shadow-2xl shadow-emerald-100 bg-emerald-50/30"
+                  ? "border-blue-600 shadow-2xl shadow-blue-100 bg-blue-50/30"
                   : "border-slate-200 bg-white"}
               `}
             >
@@ -121,7 +121,7 @@ Please share details and setup process.`
               </div>
 
               {/* Student Limit */}
-              <p className="text-sm text-emerald-600 font-semibold mb-6">
+              <p className="text-sm text-blue-600 font-semibold mb-6">
                 {plan.students}
               </p>
 
@@ -129,7 +129,7 @@ Please share details and setup process.`
               <ul className="space-y-3 mb-8 flex-1">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm text-slate-600">
-                    <Check size={16} className="text-emerald-600" />
+                    <Check size={16} className="text-blue-600" />
                     {feature}
                   </li>
                 ))}
@@ -141,7 +141,7 @@ Please share details and setup process.`
 
                 className={`w-full py-3 rounded-xl font-bold transition
                   ${plan.highlight
-                    ? "bg-emerald-600 text-white hover:bg-emerald-700"
+                    ? "bg-blue-600 text-white hover:bg-blue-700"
                     : "bg-slate-900 text-white hover:bg-slate-800"}
                 `}
               >

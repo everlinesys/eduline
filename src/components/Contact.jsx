@@ -24,17 +24,17 @@ export default function Contact() {
 
                     {/* LEFT CONTENT */}
                     <div>
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-sm font-bold mb-6">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-bold mb-6">
                             <span className="relative flex h-2 w-2">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                             </span>
                             WE'RE ONLINE
                         </div>
 
                         <h2 className="text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
                             Ready to grow your <br />
-                            <span className="text-emerald-600">digital academy?</span>
+                            <span className="text-blue-600">digital academy?</span>
                         </h2>
 
                         <p className="text-xl text-slate-500 mb-12 leading-relaxed max-w-lg">
@@ -44,7 +44,7 @@ export default function Contact() {
                         <div className="space-y-8">
                             <div className="flex items-start gap-5">
                                 <div className="w-12 h-12 shrink-0 bg-white shadow-md border border-slate-100 rounded-2xl flex items-center justify-center">
-                                    <MapPin className="text-emerald-600" size={24} />
+                                    <MapPin className="text-blue-600" size={24} />
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-slate-900 text-lg">Visit Us</h3>
@@ -55,8 +55,8 @@ export default function Contact() {
                                 </div>
                             </div>
                             <div className="flex gap-4">
-                                <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center">
-                                    <Mail className="text-emerald-600" />
+                                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
+                                    <Mail className="text-blue-600" />
                                 </div>
 
                                 <div>
@@ -69,12 +69,12 @@ export default function Contact() {
 
                             <div className="flex items-start gap-5">
                                 <div className="w-12 h-12 shrink-0 bg-white shadow-md border border-slate-100 rounded-2xl flex items-center justify-center">
-                                    <Phone className="text-emerald-600" size={24} />
+                                    <Phone className="text-blue-600" size={24} />
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-slate-900 text-lg">Direct Contact</h3>
                                     <p className="text-slate-500">+91 9400 690 911</p>
-                                    <p className="text-emerald-600 font-medium text-sm">Mon - Sat, 9am - 6pm</p>
+                                    <p className="text-blue-600 font-medium text-sm">Mon - Sat, 9am - 6pm</p>
                                 </div>
                             </div>
                         </div>
@@ -83,11 +83,11 @@ export default function Contact() {
                     {/* RIGHT — CONTACT CARD */}
                     <div className="relative">
                         {/* Soft decorative glow */}
-                        <div className="absolute -inset-4 bg-emerald-500/5 rounded-[2.5rem] blur-2xl" />
+                        <div className="absolute -inset-4 bg-blue-500/5 rounded-[2.5rem] blur-2xl" />
 
                         <div className="relative bg-white border border-slate-200 rounded-[2rem] p-8 md:p-10 shadow-2xl shadow-slate-200/50">
                             <div className="flex items-center gap-4 mb-8">
-                                <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-white">
+                                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white">
                                     <MessageCircle size={26} />
                                 </div>
                                 <div>
@@ -105,7 +105,7 @@ export default function Contact() {
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
                                         placeholder="Enter your name"
-                                        className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all placeholder:text-slate-400"
+                                        className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all placeholder:text-slate-400"
                                     />
                                 </div>
 
@@ -117,7 +117,7 @@ export default function Contact() {
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                         placeholder="name@company.com"
-                                        className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all placeholder:text-slate-400"
+                                        className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all placeholder:text-slate-400"
                                     />
                                 </div>
 
@@ -129,13 +129,13 @@ export default function Contact() {
                                         value={message}
                                         onChange={(e) => setMessage(e.target.value)}
                                         placeholder="I'm interested in a platform demo..."
-                                        className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:outline-none focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 transition-all placeholder:text-slate-400 resize-none"
+                                        className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all placeholder:text-slate-400 resize-none"
                                     />
                                 </div>
 
                                 <button
                                     type="submit"
-                                    className="w-full mt-4 bg-emerald-600 text-white py-4 rounded-2xl font-extrabold text-lg shadow-lg shadow-emerald-200 hover:bg-emerald-700 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-3"
+                                    className="w-full mt-4 bg-blue-600 text-white py-4 rounded-2xl font-extrabold text-lg shadow-lg shadow-blue-200 hover:bg-blue-700 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-3"
                                 >
                                     Start Conversation
                                     <Send size={20} />

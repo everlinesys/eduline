@@ -19,18 +19,18 @@ export default function CTA() {
   return (
     <section className="relative py-32 overflow-hidden bg-white">
 
-      {/* Emerald Background */}
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[140%] h-96 bg-emerald-600 rotate-[-6deg] rounded-[2rem]"></div>
+      {/* blue Background */}
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[140%] h-96 bg-blue-600 rotate-[-6deg] rounded-[2rem]"></div>
 
       <div className="relative max-w-5xl mx-auto px-6">
 
-        <div className="bg-gradient-to-br from-emerald-600 to-emerald-400 rounded-[1rem] p-12 md:p-16 text-center">
+        <div className="bg-gradient-to-br from-blue-600 to-blue-400 rounded-[1rem] p-12 md:p-16 text-center">
 
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Build your education brand today.
           </h2>
 
-          <p className="text-emerald-100 text-lg max-w-2xl mx-auto mb-10">
+          <p className="text-blue-100 text-lg max-w-2xl mx-auto mb-10">
             Launch your own teaching platform and own your students.
           </p>
 
@@ -38,7 +38,7 @@ export default function CTA() {
 
             <button
               onClick={() => sendWhatsApp("start")}
-              className="bg-white text-emerald-700 px-8 py-4 rounded-2xl font-bold hover:bg-emerald-50 transition flex items-center justify-center gap-2"
+              className="bg-white text-blue-700 px-8 py-4 rounded-2xl font-bold hover:bg-blue-50 transition flex items-center justify-center gap-2"
             >
               Get Started for Free
               <ArrowRight size={18} />

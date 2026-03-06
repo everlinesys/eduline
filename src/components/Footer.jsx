@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-emerald-50/40 border-t border-emerald-100 pt-20 pb-10">
+    <footer className="bg-blue-50/40 border-t border-blue-100 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* TOP */}
@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-9 h-9 bg-emerald-600 rounded-lg flex items-center justify-center text-white font-bold">
+              <div className="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
                 EL
               </div>
 
@@ -32,10 +32,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-slate-900 mb-6">Platform</h4>
             <ul className="space-y-4 text-sm text-slate-500">
-              <li><a href="#" className="hover:text-emerald-600 transition">Your Branding</a></li>
-              <li><a href="#" className="hover:text-emerald-600 transition">No Piracy</a></li>
-              <li><a href="#" className="hover:text-emerald-600 transition">Live Classes</a></li>
-              <li><a href="#" className="hover:text-emerald-600 transition">Certificates</a></li>
+              <li><a href="#" className="hover:text-blue-600 transition">Your Branding</a></li>
+              <li><a href="#" className="hover:text-blue-600 transition">No Piracy</a></li>
+              <li><a href="#" className="hover:text-blue-600 transition">Live Classes</a></li>
+              <li><a href="#" className="hover:text-blue-600 transition">Certificates</a></li>
             </ul>
           </div>
 
@@ -43,10 +43,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-slate-900 mb-6">Product</h4>
             <ul className="space-y-4 text-sm text-slate-500">
-              <li><a href="#" className="hover:text-emerald-600 transition">Video Courses</a></li>
-              <li><a href="#" className="hover:text-emerald-600 transition">Payments</a></li>
-              <li><a href="#" className="hover:text-emerald-600 transition">Analytics</a></li>
-              <li><a href="#" className="hover:text-emerald-600 transition">Email Tools</a></li>
+              <li><a href="#" className="hover:text-blue-600 transition">Video Courses</a></li>
+              <li><a href="#" className="hover:text-blue-600 transition">Payments</a></li>
+              <li><a href="#" className="hover:text-blue-600 transition">Analytics</a></li>
+              <li><a href="#" className="hover:text-blue-600 transition">Email Tools</a></li>
             </ul>
           </div>
 
@@ -54,16 +54,16 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-slate-900 mb-6">Company</h4>
             <ul className="space-y-4 text-sm text-slate-500">
-              <li><a href="#" className="hover:text-emerald-600 transition">About</a></li>
-              <li><a href="#" className="hover:text-emerald-600 transition">Careers</a></li>
-              <li><a href="#" className="hover:text-emerald-600 transition">Contact</a></li>
+              <li><a href="#" className="hover:text-blue-600 transition">About</a></li>
+              <li><a href="#" className="hover:text-blue-600 transition">Careers</a></li>
+              <li><a href="#" className="hover:text-blue-600 transition">Contact</a></li>
             </ul>
           </div>
 
         </div>
 
         {/* BOTTOM */}
-        <div className="pt-8 border-t border-emerald-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+        <div className="pt-8 border-t border-blue-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
           <p>© 2026 EduLine. All rights reserved.</p>
 
           <div className="flex gap-6">

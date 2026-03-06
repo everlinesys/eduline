@@ -28,7 +28,7 @@ export default function DemoVideo() {
         >
 
           {/* Glow */}
-          <div className="absolute -inset-4 bg-gradient-to-tr from-emerald-100 to-blue-50 blur-3xl opacity-60" />
+          <div className="absolute -inset-4 bg-gradient-to-tr from-blue-100 to-blue-50 blur-3xl opacity-60" />
 
           {/* Frame */}
           <div className="relative overflow-hidden shadow-[0_32px_64px_-15px_rgba(0,0,0,0.2)] border border-slate-100">
@@ -64,7 +64,7 @@ export default function DemoVideo() {
           {/* Caption */}
           <div className="mt-8 text-center">
             <p className="text-slate-400 font-medium flex items-center justify-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
               Watch: The Eduline Experience
             </p>
           </div>

@@ -106,13 +106,13 @@ Subdomain: ${form.subdomain}.eduline.com`
 
             <Navbar />
 
-            <div className="w-full max-w-xl bg-white rounded-2xl shadow-xl p-10 mt-32">
+            <div className="w-full mx-8  max-w-lg bg-white rounded-2xl shadow-xl p-10 mt-12">
 
                 {!submitted ? (
                     <>
                         <div className="text-center mb-8">
-                            <h1 className="text-3xl font-semibold mb-2">
-                                Create Your Eduline Academy
+                            <h1 className="text-2xl font-semibold mb-2">
+                                Create Your Academy
                             </h1>
 
                             <p className="text-gray-500">

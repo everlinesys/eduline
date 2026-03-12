@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Platform from './components/Platform';
 import DemoVideo from './components/DemoVideo';
 import WhyEduline from './components/WhyEduline';
+import Demo from './components/Demo';
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
       <Navbar />
       <Hero />
       <DemoVideo />
+      <Demo />
       <Features />
-      <WhyEduline/>
+      <WhyEduline />
       <Platform />
       <CTA />
       <Pricing />

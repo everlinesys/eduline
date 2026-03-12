@@ -167,7 +167,7 @@ export default function Hero() {
                 </Link>
 
                 <a
-                  href="https://edulinedemo.everlinesys.com"
+                  href="https://axiom-learning.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 font-bold hover:text-blue-700 transition-all flex items-center gap-2 text-lg group"

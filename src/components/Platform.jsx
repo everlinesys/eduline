@@ -2,7 +2,7 @@ import { Check, ArrowRight } from "lucide-react";
 
 export default function Platform() {
   return (
-    <section className="md:px-30 py-32 bg-slate-50/50" id="Platform">
+    <section className="md:px-30 py-32 bg-slate-50" id="Platform">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header Section */}

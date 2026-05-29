@@ -26,17 +26,24 @@ export default function Navbar() {
 
         {/* ===== DESKTOP NAV ===== */}
         <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
-          <a href="#Platform" className="hover:text-blue-600 transition">
+          <a href="/Platform" className="hover:text-blue-600 transition">
             Platform
           </a>
-          <a href="#Solutions" className="hover:text-blue-600 transition">
+          <a href="/Solutions" className="hover:text-blue-600 transition">
             Solutions
           </a>
-          <a href="#Pricing" className="hover:text-blue-600 transition">
+          <a href="/Pricing" className="hover:text-blue-600 transition">
             Pricing
           </a>
 
           <div className="flex items-center gap-3 ml-4">
+            <Link
+              to="/login"
+              className=" sm:w-auto text-blue-600 px-3 py-2 rounded-2xl font-bold hover:bg-gray-100 transition-all shadow-xl shadow-gray-200 flex items-center justify-center gap-3 "
+            >
+              Login
+
+            </Link>
             <Link
               to="/onboard"
               className=" sm:w-auto bg-blue-600 text-white px-3 py-2 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-200 flex items-center justify-center gap-3 "
@@ -68,7 +75,7 @@ export default function Navbar() {
         <div className="flex flex-col p-6 gap-6 shadow-xl shadow-slate-200/50">
 
           <a
-            href="#Platform"
+            href="/Platform"
             className="text-base font-semibold text-blue-600"
             onClick={() => setIsOpen(false)}
           >
@@ -76,7 +83,7 @@ export default function Navbar() {
           </a>
 
           <a
-            href="#Solutions"
+            href="/Solutions"
             className="text-base font-semibold text-blue-600"
             onClick={() => setIsOpen(false)}
           >
@@ -84,17 +91,25 @@ export default function Navbar() {
           </a>
 
           <a
-            href="#Pricing"
+            href="/Pricing"
             className="text-base font-semibold text-blue-600"
             onClick={() => setIsOpen(false)}
           >
             Pricing
           </a>
 
-          <hr className="border-slate-100" />
+          {/* <hr className="border-slate-100" /> */}
+          <Link
+            to="/login"
+            onClick={() => setIsOpen(false)}
+            className=" sm:w-auto text-blue-600 px-3 py-2 rounded-2xl font-bold hover:bg-gray-100 transition-all shadow-xl shadow-gray-200 flex items-center justify-center gap-3 "
+          >
+            Login
 
+          </Link>
           <Link
             to="/onboard"
+            onClick={() => setIsOpen(false)}
             className="w-full sm:w-auto bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-200 flex items-center justify-center gap-3 text-lg"
             style={{ color: "white" }} >
             Get Started for Free

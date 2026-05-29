@@ -118,9 +118,10 @@ const AcademyMockup = () => (
           <h3 className="text-md font-bold text-slate-900">Digital Masterclass</h3>
           <p className="text-[11px] text-slate-500">42 lessons • 12,403 students</p>
         </div>
-        <div className="w-full py-3 bg-blue-600 rounded-xl text-center text-white text-sm font-bold shadow-lg shadow-blue-100">
+        <Link to="/onboard" className="cursor-pointer w-full py-3 px-10 bg-blue-600 rounded-xl text-center text-white text-sm font-bold shadow-lg shadow-blue-100"
+         style={{color:"white"}} >
           Enroll Now
-        </div>
+        </Link>
       </div>
     </div>
   </div>

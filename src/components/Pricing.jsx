@@ -1,154 +1,319 @@
+import { useState } from "react";
 import { Check } from "lucide-react";
 
 const plans = [
   {
-    name: "Essential",
-    price: "₹2,500",
-    period: "/mo",
-    students: "Up to 100 active students",
+    name: "Starter",
+
+    monthly: "₹999",
+    yearly: "₹9,999",
+
+    students: "Up to 500 Students",
+
     features: [
-      "Your Branding",
-      "Video Classes",
+      "1 Course",
+      "100 GB Storage",
+      "Video Lessons",
       "PDF Notes",
-      "Basic Analytics",
+      "Text Lessons",
+      "Custom Branding",
+      "Certificates",
       "Online Payments",
       "Email Support",
     ],
+
     highlight: false,
   },
+
   {
-    name: "Premium",
-    price: "₹8,000",
-    period: "/mo",
-    students: "Up to 1,000 active students",
+    name: "Professional",
+
+    monthly: "₹2,499",
+    yearly: "₹24,999",
+
+    students: "Up to 2,000 Students",
+
     features: [
-      "Everything in Essential",
+      "Up to 5 Courses",
+      "250 GB Storage",
+      "Video Lessons",
+      "PDF Notes",
+      "Text Lessons",
       "Live Classes",
-      "Advanced Analytics",
-      "Participation Certificates",
-      "Group Emails",
+      "Certificates",
+      "Custom Branding",
+      "Analytics Dashboard",
       "Priority Support",
     ],
+
     highlight: true,
   },
+
   {
     name: "Enterprise",
-    price: "₹20,000",
-    period: "/mo",
-    students: "Unlimited active students",
+
+    monthly: "₹4,999",
+    yearly: "₹49,999",
+
+    students: "Unlimited Students",
+
     features: [
-      "Everything in Premium",
-      "Advanced DRM Protection",
-      "Custom Integrations",
-      "Dedicated Manager",
-      "API Access",
-      "White Label Apps",
+      "Unlimited Courses",
+      "1 TB Storage",
+      "Unlimited Students",
+      "Video Lessons",
+      "PDF Notes",
+      "Text Lessons",
+      "Live Classes",
+      "Certificates",
+      "Custom Branding",
+      "Custom Domain",
+      "Priority Support",
     ],
-    highlight: false,
-  },
-  {
-    name: "Custom",
-    price: "Custom",
-    period: "",
-    students: "Tailored for organizations",
-    features: [
-      "All Enterprise Features",
-      "On-premise options",
-      "Custom student limits",
-      "Dedicated infrastructure",
-      "SLA & Support",
-    ],
+
     highlight: false,
   },
 ];
 
 export default function Pricing() {
-  const sendToWhatsApp = (plan) => {
-    const phone = "919400690911";
+  const [billing, setBilling] =
+    useState("monthly");
 
-    const message = encodeURIComponent(
-      `Hello EduLine team 👋
+  const sendToWhatsApp = (
+    plan
+  ) => {
+    const phone =
+      "919400690911";
 
-I am interested in the *${plan.name}* plan.
-Price: ${plan.price}${plan.period}
-Students: ${plan.students}
+    const price =
+      billing === "monthly"
+        ? plan.monthly
+        : plan.yearly;
 
-Please share details and setup process.`
+    const period =
+      billing === "monthly"
+        ? "/month"
+        : "/year";
+
+    const message =
+      encodeURIComponent(
+        `Hello EduLine Team 👋
+
+I am interested in the ${plan.name} plan.
+
+Price: ${price}${period}
+Student Limit: ${plan.students}
+
+Please share more details.`
+      );
+
+    window.open(
+      `https://wa.me/${phone}?text=${message}`,
+      "_blank"
     );
-
-    window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
   };
 
-
   return (
-    <section className=" md:px-30 py-32 bg-white" id="Pricing">
+    <section
+      className="py-32 bg-white md:px-16 text-gray-900"
+      id="Pricing"
+    >
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
-        <div className="text-center mb-20">
-          <h2 className="text-5xl font-bold text-slate-900 mb-6">
-            Simple pricing for every stage.
+
+        <div className="text-center mb-16">
+
+          <h2 className="text-5xl font-black text-slate-900 mb-6">
+            Simple Pricing
           </h2>
-          <p className="text-lg text-slate-500">
-            Start small, scale as your teaching business grows.
+
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+            Start small and scale as
+            your institution grows.
+            No hidden fees. Cancel
+            anytime.
           </p>
+
         </div>
 
-        {/* Pricing Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Billing Toggle */}
 
-          {plans.map((plan, idx) => (
-            <div
-              key={idx}
-              className={`relative rounded-3xl border p-8 flex flex-col
-                ${plan.highlight
-                  ? "border-blue-600 shadow-2xl shadow-blue-100 bg-blue-50/30"
-                  : "border-slate-200 bg-white"}
-              `}
+        <div className="flex justify-center mb-14">
+
+          <div className="bg-slate-100 p-1 rounded-2xl flex">
+
+            <button
+              onClick={() =>
+                setBilling(
+                  "monthly"
+                )
+              }
+              className={`px-6 py-3 rounded-xl font-semibold transition ${
+                billing ===
+                "monthly"
+                  ? "bg-white shadow-md"
+                  : ""
+              }`}
             >
+              Monthly
+            </button>
 
-              {/* Plan Name */}
-              <h3 className="text-xl font-bold text-slate-900 mb-4">
-                {plan.name}
-              </h3>
+            <button
+              onClick={() =>
+                setBilling(
+                  "yearly"
+                )
+              }
+              className={`px-6 py-3 rounded-xl font-semibold transition ${
+                billing ===
+                "yearly"
+                  ? "bg-white shadow-md"
+                  : ""
+              }`}
+            >
+              Yearly
 
-              {/* Price */}
-              <div className="mb-4">
-                <span className="text-4xl font-bold text-slate-900">
-                  {plan.price}
-                </span>
-                <span className="text-slate-500 ml-1">{plan.period}</span>
-              </div>
+              <span className="ml-2 text-green-600 text-sm">
+                Save 17%
+              </span>
 
-              {/* Student Limit */}
-              <p className="text-sm text-blue-600 font-semibold mb-6">
-                {plan.students}
-              </p>
+            </button>
 
-              {/* Features */}
-              <ul className="space-y-3 mb-8 flex-1">
-                {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-2 text-sm text-slate-600">
-                    <Check size={16} className="text-blue-600" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+          </div>
 
-              {/* CTA */}
-              <button
-                onClick={() => sendToWhatsApp(plan)}
+        </div>
 
-                className={`w-full py-3 rounded-xl font-bold transition
-                  ${plan.highlight
-                    ? "bg-blue-600 text-white hover:bg-blue-700"
-                    : "bg-slate-900 text-white hover:bg-slate-800"}
-                `}
+        {/* Pricing Cards */}
+
+        <div className="grid lg:grid-cols-3 gap-8">
+
+          {plans.map(
+            (
+              plan,
+              idx
+            ) => (
+              <div
+                key={idx}
+                className={`relative rounded-3xl border p-8 flex flex-col transition-all ${
+                  plan.highlight
+                    ? "border-blue-600 bg-blue-50/30 shadow-2xl shadow-blue-100 scale-[1.03]"
+                    : "border-slate-200 bg-white"
+                }`}
               >
-                {plan.name === "Custom" ? "Contact Sales" : "Get Started"}
-              </button>
-            </div>
-          ))}
+
+                {plan.highlight && (
+                  <div className="absolute top-5 right-5 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    Most Popular
+                  </div>
+                )}
+
+                {/* Plan */}
+
+                <h3 className="text-2xl font-bold text-slate-900 mb-5">
+                  {plan.name}
+                </h3>
+
+                {/* Price */}
+
+                <div className="mb-4">
+
+                  <span className="text-5xl font-black text-slate-900">
+                    {billing ===
+                    "monthly"
+                      ? plan.monthly
+                      : plan.yearly}
+                  </span>
+
+                  <span className="text-slate-500 ml-2">
+                    {billing ===
+                    "monthly"
+                      ? "/mo"
+                      : "/yr"}
+                  </span>
+
+                </div>
+
+                {/* Student Limit */}
+
+                <p className="text-sm font-semibold text-blue-600 mb-8">
+                  {
+                    plan.students
+                  }
+                </p>
+
+                {/* Features */}
+
+                <ul className="space-y-4 flex-1">
+
+                  {plan.features.map(
+                    (
+                      feature,
+                      i
+                    ) => (
+                      <li
+                        key={i}
+                        className="flex items-center gap-3 text-slate-600"
+                      >
+                        <Check
+                          size={
+                            18
+                          }
+                          className="text-blue-600 shrink-0"
+                        />
+
+                        <span className="text-sm">
+                          {
+                            feature
+                          }
+                        </span>
+
+                      </li>
+                    )
+                  )}
+
+                </ul>
+
+                {/* CTA */}
+
+                <button
+                  onClick={() =>
+                    window.location.href = "/onboard"
+                  }
+                  className={`mt-10 w-full py-4 rounded-2xl font-bold transition ${
+                    plan.highlight
+                      ? "bg-blue-600 text-white hover:bg-blue-700"
+                      : "bg-slate-900 text-white hover:bg-slate-800"
+                  }`}
+                >
+                  Get Started
+                </button>
+
+              </div>
+            )
+          )}
+
+        </div>
+
+        {/* Bottom Note */}
+
+        <div className="mt-16 text-center">
+
+          <p className="text-slate-500 text-sm">
+            Need custom student
+            limits, dedicated
+            infrastructure, or
+            enterprise features?
+          </p>
+
+          <a
+            href="https://wa.me/919400690911"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block mt-4 text-blue-600 font-bold"
+          >
+            Contact Sales →
+          </a>
 
         </div>
 

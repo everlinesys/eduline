@@ -45,12 +45,12 @@ export default function CTA() {
               <ArrowRight size={20} />
             </Link>
 
-            <button
+            {/* <button
               onClick={() => sendWhatsApp("demo")}
               className="border border-white/40 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-white/10 transition"
             >
               Book a Demo
-            </button>
+            </button> */}
 
           </div>
         </div>

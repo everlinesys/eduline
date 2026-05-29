@@ -13,7 +13,7 @@ import Demo from './components/Demo';
 function App() {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 w-100vw overflow-x-hidden">
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <DemoVideo />
       <Demo />
@@ -23,7 +23,7 @@ function App() {
       <CTA />
       <Pricing />
       <Contact />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

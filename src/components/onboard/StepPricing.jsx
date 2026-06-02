@@ -4,8 +4,8 @@ const plans = [
   {
     id: "starter",
     name: "Starter",
-    monthly: "₹999",
-    yearly: "₹9,999",
+    monthly: "₹499",
+    yearly: "₹4,999",
     students: "Up to 500 Students",
     features: [
       "1 Course",
@@ -19,8 +19,8 @@ const plans = [
   {
     id: "professional",
     name: "Professional",
-    monthly: "₹2,499",
-    yearly: "₹24,999",
+    monthly: "₹999",
+    yearly: "₹9,999",
     students: "Up to 2,000 Students",
     features: [
       "Up to 5 Courses",
@@ -34,8 +34,8 @@ const plans = [
   {
     id: "enterprise",
     name: "Enterprise",
-    monthly: "₹4,999",
-    yearly: "₹49,999",
+    monthly: "₹2,999",
+    yearly: "₹29,999",
     students: "Unlimited Students",
     features: [
       "Unlimited Courses & Students",

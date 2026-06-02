@@ -10,8 +10,8 @@ import {
 const plans = [
   {
     name: "Launch",
-    priceMonthly: "₹999",
-    priceYearly: "₹9,999",
+    priceMonthly: "₹499",
+    priceYearly: "₹4,999",
     students: "500",
     bestFor: "Independent Educators",
     highlight: false,
@@ -30,8 +30,8 @@ const plans = [
 
   {
     name: "Growth",
-    priceMonthly: "₹2,499",
-    priceYearly: "₹24,999",
+    priceMonthly: "₹999",
+    priceYearly: "₹9,999",
     students: "2,000",
     bestFor: "Growing Academies",
     highlight: true,
@@ -51,8 +51,8 @@ const plans = [
 
   {
     name: "Academy",
-    priceMonthly: "₹4,999",
-    priceYearly: "₹49,999",
+    priceMonthly: "₹2,999",
+    priceYearly: "₹29,999",
     students: "Unlimited",
     bestFor: "Institutions & Teams",
     highlight: false,

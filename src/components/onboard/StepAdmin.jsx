@@ -6,6 +6,8 @@ import {
 
 import Input from "./Input";
 
+import { GoogleLogin } from "@react-oauth/google";
+
 export default function StepAdmin({
   form,
   update,
@@ -67,7 +69,88 @@ export default function StepAdmin({
         placeholder="••••••••"
         error={errors.password}
       />
+      <GoogleLogin
+        onSuccess={async (credentialResponse) => {
+          try {
+            const res = await api.post(
+              "/auth/google-login",
+              {
+                token: credentialResponse.credential,
+              }
+            );
 
+            const token = res.data.token;
+            const user = res.data.user;
+
+            localStorage.setItem("token", token);
+            localStorage.setItem(
+              "user",
+              JSON.stringify(user)
+            );
+
+            // Admin redirect
+            if (user.role === "ADMIN") {
+              navigate("/admin");
+              return;
+            }
+
+            // Restore pending attempt
+            const pending =
+              localStorage.getItem("pending_attempt");
+
+            if (pending) {
+              const data = JSON.parse(pending);
+
+              try {
+                await api.post(
+                  "/attempt/submit",
+                  {
+                    certificationId: data.cert.id,
+                    answers: data.answers,
+                  },
+                  {
+                    headers: {
+                      Authorization: `Bearer ${token}`,
+                    },
+                  }
+                );
+
+                localStorage.removeItem(
+                  "pending_attempt"
+                );
+
+                navigate("/result", {
+                  state: data,
+                });
+
+                return;
+              } catch (err) {
+                console.error(
+                  "Failed to sync attempt:",
+                  err
+                );
+              }
+            }
+
+            if (location.state) {
+              navigate("/result", {
+                state: location.state,
+              });
+              return;
+            }
+
+            navigate("/dashboard");
+          } catch (err) {
+            alert(
+              err.response?.data?.message ||
+              "Google login failed"
+            );
+          }
+        }}
+        onError={() => {
+          alert("Google login failed");
+        }}
+      />
     </div>
   );
 }

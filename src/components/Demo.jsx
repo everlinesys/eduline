@@ -1,126 +1,361 @@
 import React from "react";
-import { ExternalLink, Monitor, Globe, Sparkles, Link } from "lucide-react";
+import {
+  ExternalLink,
+  Globe,
+  Sparkles,
+  ArrowRight,
+} from "lucide-react";
 
 const projects = [
   {
     title: "Raga Music Academy",
     category: "Music & Arts",
     link: "https://ragamusicacademy.vercel.app",
-    image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1200&auto=format&fit=crop",
-    color: "from-purple-500 to-indigo-600",
-    description: "Digitalizing traditional music education with seamless student-teacher interactions."
+    image:
+      "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1200&auto=format&fit=crop",
+    description:
+      "Digitalizing traditional music education with seamless student-teacher interactions.",
   },
   {
     title: "Axiom Learning",
     category: "Professional Training",
     link: "https://axiom-learning.vercel.app",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
-    color: "from-blue-500 to-cyan-500",
-    description: "High-performance platform for competitive exam prep and corporate training."
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
+    description:
+      "High-performance platform for competitive exam preparation and corporate training.",
   },
   {
     title: "Grace English Academy",
     category: "Language Learning",
     link: "https://graceenglishacademy.vercel.app",
-    image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1200&auto=format&fit=crop",
-    color: "from-emerald-500 to-teal-600",
-    description: "Empowering students worldwide with interactive English communication tools."
-  }
+    image:
+      "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1200&auto=format&fit=crop",
+    description:
+      "Empowering students worldwide with interactive English communication tools.",
+  },
 ];
 
 export default function Demo() {
   return (
-    <section className="md:px-30 py-32 bg-slate-50 overflow-hidden" id="Demos">
-      <div className="max-w-7xl mx-auto px-6">
+    <section
+      className="relative py-28 bg-[#f7faf8] overflow-hidden"
+      id="Demos"
+    >
+      {/* Background */}
+
+      <div
+        className="absolute inset-0 opacity-40"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(16,185,129,.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(16,185,129,.05) 1px, transparent 1px)
+          `,
+          backgroundSize: "48px 48px",
+        }}
+      />
+
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-emerald-200/30 blur-3xl rounded-full" />
+
+      <div className="relative max-w-7xl mx-auto px-6">
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
-          <div className="max-w-2xl">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="h-px w-8 bg-blue-600"></span>
-              <span className="text-blue-600 font-bold uppercase tracking-widest text-xs">Live Showcases</span>
+
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+
+          <div className="max-w-3xl">
+
+            <div
+              className="
+                inline-flex
+                items-center
+                gap-2
+                px-4
+                py-2
+                bg-white
+                border-2
+                border-slate-900
+                rounded-full
+                mb-6
+                shadow-[4px_4px_0_0_rgba(15,23,42,.1)]
+              "
+            >
+              <Sparkles size={14} />
+
+              <span className="text-xs font-black uppercase tracking-widest">
+                Real Academies
+              </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
-              Trusted by the next generation of <span className="text-blue-600">digital academies.</span>
+
+            <h2
+              className="
+                text-4xl
+                md:text-6xl
+                font-black
+                tracking-tight
+                leading-[1]
+                text-slate-900
+              "
+            >
+              Trusted By
+              <span className="text-emerald-600">
+                {" "}Growing Academies.
+              </span>
             </h2>
+
+            <p
+              className="
+                mt-6
+                text-lg
+                text-slate-600
+                max-w-2xl
+                leading-relaxed
+              "
+            >
+              See how educators are transforming their expertise
+              into thriving online academies powered by Eduline.
+            </p>
+
           </div>
-          <p className="text-slate-500 font-medium md:text-right max-w-xs">
-            See how educators are transforming their teaching into scalable brands.
-          </p>
+
+          <div
+            className="
+              bg-white
+              border-2
+              border-slate-900
+              rounded-3xl
+              px-6
+              py-5
+            "
+          >
+            <div className="text-3xl font-black text-slate-900">
+              500+
+            </div>
+
+            <div className="text-sm text-slate-500 font-medium">
+              Academies Launched
+            </div>
+          </div>
+
         </div>
 
-        {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Cards */}
+
+        <div className="grid lg:grid-cols-3 gap-8">
+
           {projects.map((project, idx) => (
-            <div key={idx} className="group relative">
-              {/* Card Container */}
-              <div className="relative h-full bg-white rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+            <div
+              key={idx}
+              className="
+                group
+                bg-white
+                border-2
+                border-slate-900
+                rounded-[32px]
+                overflow-hidden
+                shadow-[8px_8px_0_0_rgba(15,23,42,.08)]
+                hover:-translate-y-2
+                transition-all
+                duration-300
+              "
+            >
 
-                {/* Browser Top Bar Decor */}
-                <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 bg-slate-50/50">
-                  <div className="flex gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
-                  </div>
-                  <Globe size={14} className="text-slate-400" />
+              {/* Browser Header */}
+
+              <div
+                className="
+                  flex
+                  items-center
+                  justify-between
+                  px-5
+                  py-4
+                  border-b-2
+                  border-slate-900
+                  bg-slate-50
+                "
+              >
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-400" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                  <div className="w-3 h-3 rounded-full bg-emerald-400" />
                 </div>
 
-                {/* Image Section */}
-                <div className="relative aspect-video overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-tr ${project.color} opacity-20 group-hover:opacity-10 transition-opacity duration-500`}></div>
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="p-8">
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <p className="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">{project.category}</p>
-                      <h3 className="text-2xl font-bold text-slate-900">{project.title}</h3>
-                    </div>
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-slate-900 text-white rounded-2xl hover:bg-blue-600 transition-colors"
-                    >
-                      <ExternalLink size={18} />
-                    </a>
-                  </div>
-                  <p className="text-slate-600 leading-relaxed text-sm font-medium">
-                    {project.description}
-                  </p>
-                </div>
-
-                {/* Hover Glow */}
-                <div className={`absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r ${project.color} blur-lg opacity-0 group-hover:opacity-100 transition-opacity`}></div>
+                <Globe
+                  size={16}
+                  className="text-slate-400"
+                />
               </div>
+
+              {/* Image */}
+
+              <div className="relative overflow-hidden">
+
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="
+                    w-full
+                    aspect-video
+                    object-cover
+                    group-hover:scale-105
+                    transition
+                    duration-700
+                  "
+                />
+
+              </div>
+
+              {/* Content */}
+
+              <div className="p-7">
+
+                <div
+                  className="
+                    inline-flex
+                    px-3
+                    py-1
+                    bg-emerald-50
+                    border
+                    border-emerald-200
+                    rounded-full
+                    text-[11px]
+                    font-black
+                    uppercase
+                    tracking-widest
+                    text-emerald-700
+                    mb-4
+                  "
+                >
+                  {project.category}
+                </div>
+
+                <h3
+                  className="
+                    text-2xl
+                    font-black
+                    text-slate-900
+                    mb-4
+                  "
+                >
+                  {project.title}
+                </h3>
+
+                <p
+                  className="
+                    text-slate-600
+                    leading-relaxed
+                    mb-6
+                  "
+                >
+                  {project.description}
+                </p>
+
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    inline-flex
+                    items-center
+                    gap-2
+                    font-black
+                    text-slate-900
+                    hover:text-emerald-600
+                    transition
+                  "
+                >
+                  Visit Academy
+                  <ExternalLink size={16} />
+                </a>
+
+              </div>
+
             </div>
           ))}
+
         </div>
 
-        {/* Bottom CTA for Section */}
-        <div className="mt-20 flex flex-col items-center">
-          <div className="p-6 bg-white rounded-3xl border border-slate-200 shadow-xl flex flex-col md:flex-row items-center gap-6">
-            <div className="flex -space-x-3">
-              {[1, 2, 3, 4].map(i => (
-                <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
-                  <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="user" />
-                </div>
-              ))}
+        {/* CTA */}
+
+        <div className="mt-20">
+
+          <div
+            className="
+              bg-white
+              border-2
+              border-slate-900
+              rounded-[32px]
+              p-8
+              md:p-10
+              shadow-[8px_8px_0_0_rgba(15,23,42,.08)]
+            "
+          >
+
+            <div
+              className="
+                flex
+                flex-col
+                lg:flex-row
+                items-center
+                justify-between
+                gap-8
+              "
+            >
+
+              <div>
+
+                <h3
+                  className="
+                    text-3xl
+                    md:text-4xl
+                    font-black
+                    text-slate-900
+                  "
+                >
+                  Ready To Launch
+                  <span className="text-emerald-600">
+                    {" "}Your Academy?
+                  </span>
+                </h3>
+
+                <p className="mt-3 text-slate-600 max-w-xl">
+                  Start selling courses, managing students and
+                  building your brand with Eduline.
+                </p>
+
+              </div>
+
+              <button
+                onClick={() => (window.location.href = "/onboard")}
+                className="
+                  bg-emerald-500
+                  border-2
+                  border-slate-900
+                  rounded-2xl
+                  px-8
+                  py-4
+                  font-black
+                  text-white
+                  flex
+                  items-center
+                  gap-3
+                  shadow-[5px_5px_0_0_rgba(15,23,42,1)]
+                  hover:translate-x-1
+                  hover:translate-y-1
+                  hover:shadow-none
+                  transition-all
+                "
+              >
+                Start Free
+                <ArrowRight size={18} />
+              </button>
+
             </div>
-            <p className="text-slate-700 font-bold">Join 500+ academies launched this year.</p>
-            <button onClick={() => window.location.href = "/onboard"}
-              className="px-8 py-3 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 transition-all flex items-center gap-2">
-              Build Your Academy <Sparkles size={18} />
-            </button>
+
           </div>
+
         </div>
+
       </div>
     </section>
   );

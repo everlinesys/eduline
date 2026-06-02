@@ -1,147 +1,403 @@
 import {
-  ShieldCheck,
-  Smartphone,
   Palette,
+  Lock,
   BarChart3,
   CreditCard,
   Zap,
-  Lock,
+  ShieldCheck,
+  BookOpen,
+  Award,
+  Users,
+  FileText,
 } from "lucide-react";
-
-const features = [
-  {
-    title: "Complete White-Label Authority",
-    desc: "Educators shouldn't have to share their hard-earned students with a marketplace. Launch on your own domain with your logo.",
-    subText: "Your students stay yours. No competing 'suggested courses' from other teachers.",
-    icon: <Palette className="text-blue-600" size={24} />,
-    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=774&auto=format&fit=crop"
-  },
-  {
-    title: "Your Brand in Their Pocket",
-    desc: "Offer a seamless mobile experience. A dedicated Android & iOS app allows students to learn offline and receive push notifications.",
-    subText: "Boost course completion rates by 40% with mobile-first learning pathways.",
-    icon: <Smartphone className="text-blue-600" size={24} />,
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    title: "No Downloads, No Screenshots",
-    desc: "Educators fear content theft. We provide dynamic watermarking (student's email on screen) and encrypted video streaming.",
-    subText: "Prevent screen recording and illegal downloads with our proprietary DRM tech.",
-    icon: <Lock className="text-blue-600" size={24} />,
-    image: "https://images.unsplash.com/flagged/photo-1560854350-13c0b47a3180"
-  },
-  {
-    title: "Student Behavioral Insights",
-    desc: "Identify exactly where students drop off. Track lesson heatmaps and quiz performance to improve your curriculum.",
-    subText: "Data-driven teaching: know who is struggling before they ask for a refund.",
-    icon: <BarChart3 className="text-blue-600" size={24} />,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=815&auto=format&fit=crop"
-  },
-  {
-    title: "Dedicated Student Mobile App",
-    desc: "Your students get a branded Android & iOS app with offline access, push notifications, and instant updates.",
-    subText: "Increase engagement and course completion with learning on the go.",
-    icon: <Smartphone className="text-blue-600" size={24} />,
-    image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=1200"
-  },
-  {
-    title: "Direct Payments to Your Bank",
-    desc: "Receive course payments directly into your bank account within 24 hours. No marketplace delays or commission cuts.",
-    subText: "You own your revenue stream — full control over pricing and payouts.",
-    icon: <CreditCard className="text-blue-600" size={24} />,
-    image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-  {
-    title: "Live Classes & Doubt Sessions",
-    desc: "Host live interactive classes, webinars, and doubt-solving sessions directly inside your platform.",
-    subText: "Replace Zoom links with a fully integrated learning experience.",
-    icon: <Zap className="text-blue-600" size={24} />,
-    image: "https://images.unsplash.com/photo-1610484826967-09c5720778c7?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-
-
-];
 
 export default function Features() {
   return (
-    <section className="md:px-30 relative py-28 bg-white overflow-hidden" id="Solutions">
+    <section
+      className="relative py-28 bg-[#f7faf8] overflow-hidden"
+      id="Features"
+    >
+      {/* Background */}
 
-      {/* Background Hero Shape */}
-      <div className="absolute -top-[5%] left-1/2 -translate-x-1/2 w-[140%] h-[150vh] md:h-[150vh] bg-blue-600 rotate-[-4deg] shadow-2xl"></div>
+      <div
+        className="absolute inset-0 opacity-40"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(16,185,129,.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(16,185,129,.05) 1px, transparent 1px)
+          `,
+          backgroundSize: "48px 48px",
+        }}
+      />
+
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[700px] bg-emerald-200/30 blur-3xl rounded-full" />
 
       <div className="relative max-w-7xl mx-auto px-6">
 
-        {/* Main Heading Section */}
-        <div className="mb-32 max-w-3xl">
-          <div className="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-widest text-blue-200 uppercase bg-blue-800/40 rounded-full backdrop-blur-md border border-blue-400/20">
-            Engineered for Professional Educators
+        {/* Header */}
+
+        <div className="max-w-4xl mb-20">
+
+          <div
+            className="
+              inline-flex
+              items-center
+              gap-2
+              px-4
+              py-2
+              bg-white
+              border-2
+              border-slate-900
+              rounded-full
+              mb-6
+            "
+          >
+            <ShieldCheck size={14} />
+
+            <span className="text-xs font-black uppercase tracking-widest">
+              Everything Included
+            </span>
           </div>
-          <h2 className="text-3xl md:text-6xl font-bold text-white mb-8  leading-[1.05]">
-            Everything you need
-            <span className="block text-slate-900 mt-2">to run your teaching business</span>
+
+          <h2
+            className="
+              text-4xl
+              md:text-6xl
+              font-black
+              tracking-tight
+              leading-[1]
+              text-slate-900
+            "
+          >
+            The Complete
+            <span className="block text-emerald-600">
+              LMS Business Platform
+            </span>
           </h2>
-          <p className="text-xl text-blue-50 leading-relaxed font-medium max-w-2xl opacity-90">
-            EduLine isn't just a host—it's your private campus. Everything you need to manage 100 or 100,000 students under your own brand name.
+
+          <p
+            className="
+              mt-6
+              text-lg
+              md:text-xl
+              text-slate-600
+              max-w-3xl
+            "
+          >
+            More than just a course website. Eduline gives educators
+            everything required to sell courses, manage students,
+            conduct exams, issue certificates and grow an education business.
           </p>
+
         </div>
 
-        {/* Feature Rows */}
-        <div className="flex flex-col gap-48">
-          {features.map((item, idx) => (
-            <div
-              key={idx}
-              className={`flex flex-col lg:flex-row items-center gap-16 lg:gap-24 ${idx % 2 !== 0 ? "lg:flex-row-reverse" : ""
-                }`}
-            >
-              {/* Text Column */}
-              <div className="flex-1 space-y-8">
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-50 shadow-xl shadow-blue-500/10 rounded-[2rem] border border-blue-100">
-                  {item.icon}
+        {/* Bento Grid */}
+
+        <div className="grid lg:grid-cols-12 gap-6">
+
+          {/* HERO FEATURE */}
+
+          <div
+            className="
+              lg:col-span-7
+              bg-white
+              border-2
+              border-slate-900
+              rounded-[32px]
+              overflow-hidden
+              shadow-[10px_10px_0_0_rgba(15,23,42,.08)]
+            "
+          >
+
+            <div className="p-8 md:p-10">
+
+              <div className="w-16 h-16 rounded-3xl bg-emerald-100 flex items-center justify-center mb-6">
+                <BookOpen
+                  className="text-emerald-600"
+                  size={32}
+                />
+              </div>
+
+              <h3 className="text-4xl font-black text-slate-900">
+                Professional LMS Website
+              </h3>
+
+              <p className="mt-5 text-slate-600 text-lg leading-relaxed">
+                Launch a complete learning platform under your own
+                brand with course catalogs, lesson tracking,
+                certificates, quizzes, study materials and
+                student management.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4 mt-8">
+
+                <div className="bg-emerald-50 rounded-2xl p-4">
+                  <div className="font-black">Courses</div>
+                  <div className="text-sm text-slate-600">
+                    Unlimited lessons & modules
+                  </div>
                 </div>
 
-                <div className="space-y-6">
-                  <h3 className="text-4xl font-black text-slate-900 tracking-tight leading-tight">
-                    {item.title}
-                  </h3>
-                  <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                    {item.desc}
-                  </p>
-
-                  {/* The "Why Educators Care" Highlight */}
-                  <div className="flex items-start gap-4 p-5 bg-blue-50/50 rounded-2xl border border-blue-100/50">
-                    <Zap className="text-blue-500 shrink-0 mt-1" size={18} />
-                    <p className="text-sm font-bold text-blue-700 uppercase tracking-wide leading-snug">
-                      {item.subText}
-                    </p>
+                <div className="bg-emerald-50 rounded-2xl p-4">
+                  <div className="font-black">Students</div>
+                  <div className="text-sm text-slate-600">
+                    Manage enrollments
                   </div>
+                </div>
+
+                <div className="bg-emerald-50 rounded-2xl p-4">
+                  <div className="font-black">Progress</div>
+                  <div className="text-sm text-slate-600">
+                    Track completion rates
+                  </div>
+                </div>
+
+                <div className="bg-emerald-50 rounded-2xl p-4">
+                  <div className="font-black">Branding</div>
+                  <div className="text-sm text-slate-600">
+                    Custom domain & logo
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200"
+              alt=""
+              className="w-full h-72 object-cover"
+            />
+
+          </div>
+
+          {/* FEATURE 2 */}
+
+          <div
+            className="
+              lg:col-span-5
+              bg-emerald-500
+              border-2
+              border-slate-900
+              rounded-[32px]
+              p-8
+              shadow-[10px_10px_0_0_rgba(15,23,42,.08)]
+            "
+          >
+
+            <Award size={42} />
+
+            <h3 className="mt-6 text-3xl font-black text-slate-900">
+              Automated Certificates
+            </h3>
+
+            <p className="mt-4 text-slate-800 leading-relaxed">
+              Generate professional certificates automatically
+              when students complete courses or pass exams.
+            </p>
+
+            <div className="mt-8 space-y-3 text-sm font-bold">
+
+              <div>✓ Unique Certificate Numbers</div>
+              <div>✓ Verification Pages</div>
+              <div>✓ Automatic Generation</div>
+              <div>✓ Custom Designs</div>
+
+            </div>
+
+          </div>
+
+          {/* FEATURE 3 */}
+
+          <div
+            className="
+              lg:col-span-4
+              bg-white
+              border-2
+              border-slate-900
+              rounded-[32px]
+              p-8
+              shadow-[10px_10px_0_0_rgba(15,23,42,.08)]
+            "
+          >
+            <FileText
+              className="text-emerald-600"
+              size={40}
+            />
+
+            <h3 className="mt-6 text-2xl font-black">
+              Exams & Assessments
+            </h3>
+
+            <p className="mt-4 text-slate-600">
+              Create quizzes, tests and final exams with
+              instant evaluation and score tracking.
+            </p>
+          </div>
+
+          {/* FEATURE 4 */}
+
+          <div
+            className="
+              lg:col-span-4
+              bg-white
+              border-2
+              border-slate-900
+              rounded-[32px]
+              p-8
+              shadow-[10px_10px_0_0_rgba(15,23,42,.08)]
+            "
+          >
+            <CreditCard
+              className="text-emerald-600"
+              size={40}
+            />
+
+            <h3 className="mt-6 text-2xl font-black">
+              Direct Payments
+            </h3>
+
+            <p className="mt-4 text-slate-600">
+              Accept online payments and receive money
+              directly into your bank account.
+            </p>
+          </div>
+
+          {/* FEATURE 5 */}
+
+          <div
+            className="
+              lg:col-span-4
+              bg-white
+              border-2
+              border-slate-900
+              rounded-[32px]
+              p-8
+              shadow-[10px_10px_0_0_rgba(15,23,42,.08)]
+            "
+          >
+            <Users
+              className="text-emerald-600"
+              size={40}
+            />
+
+            <h3 className="mt-6 text-2xl font-black">
+              Student Management
+            </h3>
+
+            <p className="mt-4 text-slate-600">
+              View enrollments, monitor progress,
+              communicate and manage learners efficiently.
+            </p>
+          </div>
+
+          {/* FEATURE 6 */}
+
+          <div
+            className="
+              lg:col-span-6
+              bg-slate-900
+              text-white
+              border-2
+              border-slate-900
+              rounded-[32px]
+              p-8
+            "
+          >
+            <BarChart3
+              className="text-emerald-400"
+              size={42}
+            />
+
+            <h3 className="mt-6 text-3xl font-black">
+              Analytics Dashboard
+            </h3>
+
+            <p className="mt-4 text-slate-300 leading-relaxed">
+              Track revenue, enrollments, course performance,
+              completion rates and student engagement from
+              a centralized dashboard.
+            </p>
+
+            <div className="grid grid-cols-3 gap-4 mt-8">
+
+              <div>
+                <div className="text-3xl font-black">100%</div>
+                <div className="text-xs text-slate-400">
+                  Revenue Visibility
                 </div>
               </div>
 
-              {/* Image Column */}
-              <div className="flex-1 w-full">
-                <div className="relative group">
-                  <div className="absolute -inset-8 bg-blue-500/10 rounded-[4rem] blur-3xl opacity-0 group-hover:opacity-100 transition duration-1000"></div>
+              <div>
+                <div className="text-3xl font-black">24/7</div>
+                <div className="text-xs text-slate-400">
+                  Monitoring
+                </div>
+              </div>
 
-                  <div className="relative bg-white p-3 rounded-[3rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] border border-slate-100">
-                    <div className="flex gap-2 mb-4 ml-6 mt-3">
-                      <div className="w-3 h-3 rounded-full bg-green-200"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-200"></div>
-                      <div className="w-3 h-3 rounded-full bg-red-200"></div>
-                    </div>
-                    <div className="overflow-hidden rounded-[2.2rem] bg-slate-50">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full aspect-[4/3] object-cover group-hover:scale-110 transition duration-[2s] ease-in-out"
-                      />
-                    </div>
-                  </div>
+              <div>
+                <div className="text-3xl font-black">Live</div>
+                <div className="text-xs text-slate-400">
+                  Insights
                 </div>
               </div>
 
             </div>
-          ))}
+
+          </div>
+
+          {/* FEATURE 7 */}
+
+          <div
+            className="
+              lg:col-span-6
+              bg-white
+              border-2
+              border-slate-900
+              rounded-[32px]
+              p-8
+              shadow-[10px_10px_0_0_rgba(15,23,42,.08)]
+            "
+          >
+            <Palette
+              className="text-emerald-600"
+              size={42}
+            />
+
+            <h3 className="mt-6 text-3xl font-black">
+              White Label Branding
+            </h3>
+
+            <p className="mt-4 text-slate-600 leading-relaxed">
+              Use your own domain, logo, colors and identity.
+              Build long-term trust with students while
+              growing your independent education brand.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+
+              <span className="px-4 py-2 rounded-full bg-emerald-50 font-bold text-sm">
+                Custom Domain
+              </span>
+
+              <span className="px-4 py-2 rounded-full bg-emerald-50 font-bold text-sm">
+                Custom Logo
+              </span>
+
+              <span className="px-4 py-2 rounded-full bg-emerald-50 font-bold text-sm">
+                Brand Colors
+              </span>
+
+              <span className="px-4 py-2 rounded-full bg-emerald-50 font-bold text-sm">
+                Professional Identity
+              </span>
+
+            </div>
+
+          </div>
+
         </div>
+
       </div>
     </section>
   );

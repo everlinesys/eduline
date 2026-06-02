@@ -144,7 +144,7 @@ export default function Onboard() {
   }
 
   return (
-    <div className="min-h-screen w-[100vw] bg-slate-50 py-20 px-6 text-gray-800">
+    <div className="min-h-screen w-[100vw] bg-slate-50 py-30 px-6 text-gray-800">
 
       <div className="max-w-3xl mx-auto bg-white rounded-3xl border shadow-xl p-10">
 

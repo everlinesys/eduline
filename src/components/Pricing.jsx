@@ -1,38 +1,40 @@
 import { useState } from "react";
-import { Check } from "lucide-react";
+import {
+  Check,
+  GraduationCap,
+  TrendingUp,
+  Building2,
+  ShieldCheck,
+} from "lucide-react";
 
 const plans = [
   {
-    name: "Starter",
-
-    monthly: "₹999",
-    yearly: "₹9,999",
-
-    students: "Up to 500 Students",
-
+    name: "Launch",
+    priceMonthly: "₹999",
+    priceYearly: "₹9,999",
+    students: "500",
+    bestFor: "Independent Educators",
+    highlight: false,
     features: [
       "1 Course",
       "100 GB Storage",
       "Video Lessons",
       "PDF Notes",
       "Text Lessons",
-      "Custom Branding",
       "Certificates",
       "Online Payments",
+      "Custom Branding",
       "Email Support",
     ],
-
-    highlight: false,
   },
 
   {
-    name: "Professional",
-
-    monthly: "₹2,499",
-    yearly: "₹24,999",
-
-    students: "Up to 2,000 Students",
-
+    name: "Growth",
+    priceMonthly: "₹2,499",
+    priceYearly: "₹24,999",
+    students: "2,000",
+    bestFor: "Growing Academies",
+    highlight: true,
     features: [
       "Up to 5 Courses",
       "250 GB Storage",
@@ -45,275 +47,364 @@ const plans = [
       "Analytics Dashboard",
       "Priority Support",
     ],
-
-    highlight: true,
   },
 
   {
-    name: "Enterprise",
-
-    monthly: "₹4,999",
-    yearly: "₹49,999",
-
-    students: "Unlimited Students",
-
+    name: "Academy",
+    priceMonthly: "₹4,999",
+    priceYearly: "₹49,999",
+    students: "Unlimited",
+    bestFor: "Institutions & Teams",
+    highlight: false,
     features: [
       "Unlimited Courses",
       "1 TB Storage",
       "Unlimited Students",
-      "Video Lessons",
-      "PDF Notes",
-      "Text Lessons",
       "Live Classes",
       "Certificates",
-      "Custom Branding",
       "Custom Domain",
+      "Analytics Dashboard",
       "Priority Support",
+      "Advanced Branding",
     ],
-
-    highlight: false,
   },
 ];
 
 export default function Pricing() {
-  const [billing, setBilling] =
-    useState("monthly");
-
-  const sendToWhatsApp = (
-    plan
-  ) => {
-    const phone =
-      "919400690911";
-
-    const price =
-      billing === "monthly"
-        ? plan.monthly
-        : plan.yearly;
-
-    const period =
-      billing === "monthly"
-        ? "/month"
-        : "/year";
-
-    const message =
-      encodeURIComponent(
-        `Hello EduLine Team 👋
-
-I am interested in the ${plan.name} plan.
-
-Price: ${price}${period}
-Student Limit: ${plan.students}
-
-Please share more details.`
-      );
-
-    window.open(
-      `https://wa.me/${phone}?text=${message}`,
-      "_blank"
-    );
-  };
+  const [billing, setBilling] = useState("yearly");
 
   return (
     <section
-      className="py-32 bg-white md:px-16 text-gray-900"
+      className="relative py-28 bg-[#f7faf8] overflow-hidden"
       id="Pricing"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      {/* Background */}
 
-        {/* Heading */}
+      <div
+        className="absolute inset-0 opacity-40"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(16,185,129,.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(16,185,129,.05) 1px, transparent 1px)
+          `,
+          backgroundSize: "48px 48px",
+        }}
+      />
 
-        <div className="text-center mb-16">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[700px] bg-emerald-200/30 blur-3xl rounded-full" />
 
-          <h2 className="text-5xl font-black text-slate-900 mb-6">
-            Simple Pricing
+      <div className="relative max-w-7xl mx-auto px-6">
+
+        {/* Header */}
+
+        <div className="text-center max-w-4xl mx-auto mb-16">
+
+          <div
+            className="
+              inline-flex
+              items-center
+              gap-2
+              px-4
+              py-2
+              bg-white
+              border-2
+              border-slate-900
+              rounded-full
+              mb-6
+            "
+          >
+            <ShieldCheck size={14} />
+
+            <span className="text-xs font-black uppercase tracking-widest">
+              Simple Pricing
+            </span>
+          </div>
+
+          <h2
+            className="
+              text-4xl
+              md:text-6xl
+              font-black
+              tracking-tight
+              leading-[1]
+              text-slate-900
+            "
+          >
+            Pricing Designed For
+            <span className="block text-emerald-600">
+              Growing Academies
+            </span>
           </h2>
 
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-            Start small and scale as
-            your institution grows.
-            No hidden fees. Cancel
-            anytime.
+          <p className="mt-6 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+            Build your own education business. Keep your students,
+            your brand and your revenue.
           </p>
 
         </div>
 
-        {/* Billing Toggle */}
+        {/* Trust Row */}
+
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
+
+          <div className="bg-white border-2 border-slate-900 rounded-[24px] p-6 shadow-[6px_6px_0_0_rgba(15,23,42,.08)]">
+            <h3 className="font-black text-lg text-slate-900">
+              Your Brand
+            </h3>
+
+            <p className="mt-2 text-slate-600">
+              Custom domain, logo and academy identity.
+            </p>
+          </div>
+
+          <div className="bg-white border-2 border-slate-900 rounded-[24px] p-6 shadow-[6px_6px_0_0_rgba(15,23,42,.08)]">
+            <h3 className="font-black text-lg text-slate-900">
+              Your Revenue
+            </h3>
+
+            <p className="mt-2 text-slate-600">
+              Receive payments directly into your account.
+            </p>
+          </div>
+
+          <div className="bg-white border-2 border-slate-900 rounded-[24px] p-6 shadow-[6px_6px_0_0_rgba(15,23,42,.08)]">
+            <h3 className="font-black text-lg text-slate-900">
+              Your Students
+            </h3>
+
+            <p className="mt-2 text-slate-600">
+              Build direct relationships without middlemen.
+            </p>
+          </div>
+
+        </div>
+
+        {/* Toggle */}
 
         <div className="flex justify-center mb-14">
 
-          <div className="bg-slate-100 p-1 rounded-2xl flex">
+          <div className="bg-white border-2 border-slate-900 p-1 rounded-2xl">
 
             <button
-              onClick={() =>
-                setBilling(
-                  "monthly"
-                )
-              }
-              className={`px-6 py-3 rounded-xl font-semibold transition ${
-                billing ===
-                "monthly"
-                  ? "bg-white shadow-md"
-                  : ""
+              onClick={() => setBilling("monthly")}
+              className={`px-6 py-3 rounded-xl font-bold transition ${
+                billing === "monthly"
+                  ? "bg-slate-900 text-white"
+                  : "text-slate-600"
               }`}
             >
               Monthly
             </button>
 
             <button
-              onClick={() =>
-                setBilling(
-                  "yearly"
-                )
-              }
-              className={`px-6 py-3 rounded-xl font-semibold transition ${
-                billing ===
-                "yearly"
-                  ? "bg-white shadow-md"
-                  : ""
+              onClick={() => setBilling("yearly")}
+              className={`px-6 py-3 rounded-xl font-bold transition ${
+                billing === "yearly"
+                  ? "bg-emerald-500 text-white"
+                  : "text-slate-600"
               }`}
             >
               Yearly
-
-              <span className="ml-2 text-green-600 text-sm">
-                Save 17%
-              </span>
-
             </button>
 
           </div>
 
         </div>
 
-        {/* Pricing Cards */}
+        {/* Cards */}
 
         <div className="grid lg:grid-cols-3 gap-8">
 
-          {plans.map(
-            (
-              plan,
-              idx
-            ) => (
-              <div
-                key={idx}
-                className={`relative rounded-3xl border p-8 flex flex-col transition-all ${
+          {plans.map((plan, i) => (
+            <div
+              key={i}
+              className={`
+                relative
+                rounded-[32px]
+                border-2
+                border-slate-900
+                p-8
+                flex
+                flex-col
+                shadow-[10px_10px_0_0_rgba(15,23,42,.08)]
+                ${
                   plan.highlight
-                    ? "border-blue-600 bg-blue-50/30 shadow-2xl shadow-blue-100 scale-[1.03]"
-                    : "border-slate-200 bg-white"
-                }`}
-              >
+                    ? "bg-emerald-500 lg:scale-105"
+                    : "bg-white"
+                }
+              `}
+            >
 
-                {plan.highlight && (
-                  <div className="absolute top-5 right-5 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    Most Popular
-                  </div>
-                )}
+              {plan.highlight && (
+                <div
+                  className="
+                    absolute
+                    top-5
+                    right-5
+                    bg-white
+                    border-2
+                    border-slate-900
+                    px-3
+                    py-1
+                    rounded-full
+                    text-xs
+                    font-black
+                  "
+                >
+                  MOST POPULAR
+                </div>
+              )}
 
-                {/* Plan */}
+              <div className="mb-8">
 
-                <h3 className="text-2xl font-bold text-slate-900 mb-5">
+                <h3 className="text-3xl font-black text-slate-900">
                   {plan.name}
                 </h3>
 
-                {/* Price */}
-
-                <div className="mb-4">
-
-                  <span className="text-5xl font-black text-slate-900">
-                    {billing ===
-                    "monthly"
-                      ? plan.monthly
-                      : plan.yearly}
-                  </span>
-
-                  <span className="text-slate-500 ml-2">
-                    {billing ===
-                    "monthly"
-                      ? "/mo"
-                      : "/yr"}
-                  </span>
-
-                </div>
-
-                {/* Student Limit */}
-
-                <p className="text-sm font-semibold text-blue-600 mb-8">
-                  {
-                    plan.students
-                  }
+                <p className="mt-2 text-sm font-bold text-slate-700">
+                  Best For: {plan.bestFor}
                 </p>
 
-                {/* Features */}
+              </div>
 
-                <ul className="space-y-4 flex-1">
+              <div className="mb-8">
 
-                  {plan.features.map(
-                    (
-                      feature,
-                      i
-                    ) => (
-                      <li
-                        key={i}
-                        className="flex items-center gap-3 text-slate-600"
-                      >
-                        <Check
-                          size={
-                            18
-                          }
-                          className="text-blue-600 shrink-0"
-                        />
+                <div className="text-6xl font-black text-slate-900">
+                  {billing === "monthly"
+                    ? plan.priceMonthly
+                    : plan.priceYearly}
+                </div>
 
-                        <span className="text-sm">
-                          {
-                            feature
-                          }
-                        </span>
-
-                      </li>
-                    )
-                  )}
-
-                </ul>
-
-                {/* CTA */}
-
-                <button
-                  onClick={() =>
-                    window.location.href = "/onboard"
-                  }
-                  className={`mt-10 w-full py-4 rounded-2xl font-bold transition ${
-                    plan.highlight
-                      ? "bg-blue-600 text-white hover:bg-blue-700"
-                      : "bg-slate-900 text-white hover:bg-slate-800"
-                  }`}
-                >
-                  Get Started
-                </button>
+                <div className="text-slate-700 font-semibold mt-2">
+                  {billing === "monthly"
+                    ? "/month"
+                    : "/year"}
+                </div>
 
               </div>
-            )
-          )}
+
+              <div
+                className="
+                  bg-white/80
+                  border-2
+                  border-slate-900
+                  rounded-2xl
+                  p-5
+                  mb-8
+                "
+              >
+                <div className="text-xs uppercase font-black text-slate-500">
+                  Student Capacity
+                </div>
+
+                <div className="text-4xl font-black text-slate-900 mt-2">
+                  {plan.students}
+                </div>
+
+                <div className="text-slate-600">
+                  Students
+                </div>
+
+              </div>
+
+              <ul className="space-y-4 flex-1">
+
+                {plan.features.map((feature, idx) => (
+                  <li
+                    key={idx}
+                    className="flex items-start gap-3"
+                  >
+                    <Check
+                      size={18}
+                      className="text-slate-900 mt-1 shrink-0"
+                    />
+
+                    <span className="text-slate-800 font-medium">
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+
+              </ul>
+
+              <button
+                onClick={() =>
+                  (window.location.href = "/onboard")
+                }
+                className={`
+                  mt-10
+                  w-full
+                  py-4
+                  rounded-2xl
+                  font-black
+                  border-2
+                  border-slate-900
+                  transition-all
+                  ${
+                    plan.highlight
+                      ? "bg-white text-slate-900 hover:translate-y-1"
+                      : "bg-slate-900 text-white hover:bg-black"
+                  }
+                `}
+              >
+                Get Started
+              </button>
+
+            </div>
+          ))}
 
         </div>
 
-        {/* Bottom Note */}
+        {/* Enterprise CTA */}
 
-        <div className="mt-16 text-center">
+        <div className="mt-16">
 
-          <p className="text-slate-500 text-sm">
-            Need custom student
-            limits, dedicated
-            infrastructure, or
-            enterprise features?
-          </p>
-
-          <a
-            href="https://wa.me/919400690911"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-block mt-4 text-blue-600 font-bold"
+          <div
+            className="
+              bg-slate-900
+              rounded-[32px]
+              p-10
+              text-center
+              text-white
+            "
           >
-            Contact Sales →
-          </a>
+
+            <Building2
+              size={42}
+              className="mx-auto mb-5 text-emerald-400"
+            />
+
+            <h3 className="text-3xl font-black">
+              Need Something Custom?
+            </h3>
+
+            <p className="mt-4 text-slate-300 max-w-2xl mx-auto">
+              Dedicated infrastructure, larger storage,
+              higher student limits or custom development.
+            </p>
+
+            <a
+              href="https://wa.me/919400690911"
+              target="_blank"
+              rel="noreferrer"
+              className="
+                inline-flex
+                items-center
+                gap-3
+                mt-8
+                bg-emerald-500
+                px-8
+                py-4
+                rounded-2xl
+                font-black
+                text-white
+              "
+            >
+              <TrendingUp size={18} />
+              Contact Sales
+            </a>
+
+          </div>
 
         </div>
 

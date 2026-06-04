@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 
 const plans = [{
+  id: "trial",
   name: "Free Trial",
   priceMonthly: "₹1",
   priceYearly: "₹1",

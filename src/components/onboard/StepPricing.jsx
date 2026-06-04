@@ -1,51 +1,70 @@
 import { Check } from "lucide-react";
 
-const plans = [
-  {
-    id: "starter",
-    name: "Starter",
-    monthly: "₹499",
-    yearly: "₹4,999",
-    students: "Up to 500 Students",
-    features: [
-      "1 Course",
-      "100 GB Storage",
-      "Video Lessons & PDF Notes",
-      "Custom Branding & Certificates",
-      "Email Support",
-    ],
-    highlight: false,
-  },
-  {
-    id: "professional",
-    name: "Professional",
-    monthly: "₹999",
-    yearly: "₹9,999",
-    students: "Up to 2,000 Students",
-    features: [
-      "Up to 5 Courses",
-      "250 GB Storage",
-      "Live Classes & Dashboard",
-      "Custom Branding & Certificates",
-      "Priority Support",
-    ],
-    highlight: true,
-  },
-  {
-    id: "enterprise",
-    name: "Enterprise",
-    monthly: "₹2,999",
-    yearly: "₹29,999",
-    students: "Unlimited Students",
-    features: [
-      "Unlimited Courses & Students",
-      "1 TB Storage",
-      "Custom Domain Integration",
-      "Live Classes & Full Analytics",
-      "24/7 Priority Support",
-    ],
-    highlight: false,
-  },
+const plans = [{
+  name: "Free Trial",
+  priceMonthly: "₹0",
+  priceYearly: "₹0",
+  students: "25",
+  bestFor: "Try Eduline Risk-Free",
+  highlight: false,
+  trial: true,
+  features: [
+    "7 Days Free",
+    "1 Course",
+    "25 Students",
+    "5 GB Storage",
+    "Video Lessons",
+    "PDF Notes",
+    "Text Lessons",
+    "Custom Branding",
+    "No Credit Card Required"
+  ],
+},
+{
+  id: "starter",
+  name: "Starter",
+  monthly: "₹499",
+  yearly: "₹4,999",
+  students: "Up to 500 Students",
+  features: [
+    "1 Course",
+    "100 GB Storage",
+    "Video Lessons & PDF Notes",
+    "Custom Branding & Certificates",
+    "Email Support",
+  ],
+  highlight: false,
+},
+{
+  id: "professional",
+  name: "Professional",
+  monthly: "₹999",
+  yearly: "₹9,999",
+  students: "Up to 2,000 Students",
+  features: [
+    "Up to 5 Courses",
+    "250 GB Storage",
+    "Live Classes & Dashboard",
+    "Custom Branding & Certificates",
+    "Priority Support",
+  ],
+  highlight: true,
+},
+{
+  id: "enterprise",
+  name: "Enterprise",
+  monthly: "₹2,999",
+  yearly: "₹29,999",
+  students: "Unlimited Students",
+  features: [
+    "Unlimited Courses & Students",
+    "1 TB Storage",
+    "Custom Domain Integration",
+    "Live Classes & Full Analytics",
+    "24/7 Priority Support",
+  ],
+  highlight: false,
+},
 ];
 
 export default function StepPricing({ form, update }) {
@@ -70,22 +89,20 @@ export default function StepPricing({ form, update }) {
             <button
               type="button"
               onClick={() => update("billing", "monthly")}
-              className={`px-4 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer ${
-                !isYearly
+              className={`px-4 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer ${!isYearly
                   ? "bg-white text-slate-900 shadow-sm"
                   : "text-slate-500 hover:text-slate-800"
-              }`}
+                }`}
             >
               Monthly
             </button>
             <button
               type="button"
               onClick={() => update("billing", "yearly")}
-              className={`px-4 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all duration-200 flex items-center gap-1.5 cursor-pointer ${
-                isYearly
+              className={`px-4 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all duration-200 flex items-center gap-1.5 cursor-pointer ${isYearly
                   ? "bg-white text-slate-900 shadow-sm"
                   : "text-slate-500 hover:text-slate-800"
-              }`}
+                }`}
             >
               Yearly
               <span className="bg-emerald-500 text-white text-[9px] px-1.5 py-0.5 rounded-full font-bold">
@@ -107,10 +124,9 @@ export default function StepPricing({ form, update }) {
               key={plan.id}
               onClick={() => update("plan", plan.id)}
               className={`relative bg-white border rounded-2xl p-6 transition-all duration-300 cursor-pointer flex flex-col h-full group
-                ${
-                  isSelected
-                    ? "border-blue-600 ring-2 ring-blue-600/10 shadow-md shadow-blue-50"
-                    : plan.highlight
+                ${isSelected
+                  ? "border-blue-600 ring-2 ring-blue-600/10 shadow-md shadow-blue-50"
+                  : plan.highlight
                     ? "border-slate-300 shadow-sm hover:border-slate-400"
                     : "border-slate-200 hover:border-slate-300"
                 }
@@ -145,10 +161,9 @@ export default function StepPricing({ form, update }) {
               <button
                 type="button"
                 className={`w-full py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 mb-6 border pointer-events-none
-                  ${
-                    isSelected
-                      ? "bg-blue-600 text-white border-blue-600 shadow-sm shadow-blue-200"
-                      : "bg-slate-50 text-slate-700 border-slate-200 group-hover:bg-slate-100 group-hover:text-slate-900"
+                  ${isSelected
+                    ? "bg-blue-600 text-white border-blue-600 shadow-sm shadow-blue-200"
+                    : "bg-slate-50 text-slate-700 border-slate-200 group-hover:bg-slate-100 group-hover:text-slate-900"
                   }
                 `}
               >

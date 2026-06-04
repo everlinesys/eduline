@@ -7,67 +7,86 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-const plans = [
-  {
-    name: "Launch",
-    priceMonthly: "₹499",
-    priceYearly: "₹4,999",
-    students: "500",
-    bestFor: "Independent Educators",
-    highlight: false,
-    features: [
-      "1 Course",
-      "100 GB Storage",
-      "Video Lessons",
-      "PDF Notes",
-      "Text Lessons",
-      "Certificates",
-      "Online Payments",
-      "Custom Branding",
-      "Email Support",
-    ],
-  },
+const plans = [{
+  name: "Free Trial",
+  priceMonthly: "₹0",
+  priceYearly: "₹0",
+  students: "25",
+  bestFor: "Try Eduline Risk-Free",
+  highlight: false,
+  trial: true,
+  features: [
+    "7 Days Free",
+    "1 Course",
+    "25 Students",
+    "5 GB Storage",
+    "Video Lessons",
+    "PDF Notes",
+    "Text Lessons",
+    "Custom Branding",
+    "No Credit Card Required"
+  ],
+},
+{
+  name: "Launch",
+  priceMonthly: "₹499",
+  priceYearly: "₹4,999",
+  students: "500",
+  bestFor: "Independent Educators",
+  highlight: false,
+  features: [
+    "1 Course",
+    "100 GB Storage",
+    "Video Lessons",
+    "PDF Notes",
+    "Text Lessons",
+    "Certificates",
+    "Online Payments",
+    "Custom Branding",
+    "Email Support",
+  ],
+},
 
-  {
-    name: "Growth",
-    priceMonthly: "₹999",
-    priceYearly: "₹9,999",
-    students: "2,000",
-    bestFor: "Growing Academies",
-    highlight: true,
-    features: [
-      "Up to 5 Courses",
-      "250 GB Storage",
-      "Video Lessons",
-      "PDF Notes",
-      "Text Lessons",
-      "Live Classes",
-      "Certificates",
-      "Custom Branding",
-      "Analytics Dashboard",
-      "Priority Support",
-    ],
-  },
+{
+  name: "Growth",
+  priceMonthly: "₹999",
+  priceYearly: "₹9,999",
+  students: "2,000",
+  bestFor: "Growing Academies",
+  highlight: true,
+  features: [
+    "Up to 5 Courses",
+    "250 GB Storage",
+    "Video Lessons",
+    "PDF Notes",
+    "Text Lessons",
+    "Live Classes",
+    "Certificates",
+    "Custom Branding",
+    "Analytics Dashboard",
+    "Priority Support",
+  ],
+},
 
-  {
-    name: "Academy",
-    priceMonthly: "₹2,999",
-    priceYearly: "₹29,999",
-    students: "Unlimited",
-    bestFor: "Institutions & Teams",
-    highlight: false,
-    features: [
-      "Unlimited Courses",
-      "1 TB Storage",
-      "Unlimited Students",
-      "Live Classes",
-      "Certificates",
-      "Custom Domain",
-      "Analytics Dashboard",
-      "Priority Support",
-      "Advanced Branding",
-    ],
-  },
+{
+  name: "Academy",
+  priceMonthly: "₹2,999",
+  priceYearly: "₹29,999",
+  students: "Unlimited",
+  bestFor: "Institutions & Teams",
+  highlight: false,
+  features: [
+    "Unlimited Courses",
+    "1 TB Storage",
+    "Unlimited Students",
+    "Live Classes",
+    "Certificates",
+    "Custom Domain",
+    "Analytics Dashboard",
+    "Priority Support",
+    "Advanced Branding",
+  ],
+},
 ];
 
 export default function Pricing() {
@@ -187,22 +206,20 @@ export default function Pricing() {
 
             <button
               onClick={() => setBilling("monthly")}
-              className={`px-6 py-3 rounded-xl font-bold transition ${
-                billing === "monthly"
+              className={`px-6 py-3 rounded-xl font-bold transition ${billing === "monthly"
                   ? "bg-slate-900 text-white"
                   : "text-slate-600"
-              }`}
+                }`}
             >
               Monthly
             </button>
 
             <button
               onClick={() => setBilling("yearly")}
-              className={`px-6 py-3 rounded-xl font-bold transition ${
-                billing === "yearly"
+              className={`px-6 py-3 rounded-xl font-bold transition ${billing === "yearly"
                   ? "bg-emerald-500 text-white"
                   : "text-slate-600"
-              }`}
+                }`}
             >
               Yearly
             </button>
@@ -227,10 +244,9 @@ export default function Pricing() {
                 flex
                 flex-col
                 shadow-[10px_10px_0_0_rgba(15,23,42,.08)]
-                ${
-                  plan.highlight
-                    ? "bg-emerald-500 lg:scale-105"
-                    : "bg-white"
+                ${plan.highlight
+                  ? "bg-emerald-500 lg:scale-105"
+                  : "bg-white"
                 }
               `}
             >
@@ -340,10 +356,9 @@ export default function Pricing() {
                   border-2
                   border-slate-900
                   transition-all
-                  ${
-                    plan.highlight
-                      ? "bg-white text-slate-900 hover:translate-y-1"
-                      : "bg-slate-900 text-white hover:bg-black"
+                  ${plan.highlight
+                    ? "bg-white text-slate-900 hover:translate-y-1"
+                    : "bg-slate-900 text-white hover:bg-black"
                   }
                 `}
               >

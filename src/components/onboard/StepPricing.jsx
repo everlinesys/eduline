@@ -2,8 +2,8 @@ import { Check } from "lucide-react";
 
 const plans = [{
   name: "Free Trial",
-  priceMonthly: "₹0",
-  priceYearly: "₹0",
+  priceMonthly: "₹1",
+  priceYearly: "₹1",
   students: "25",
   bestFor: "Try Eduline Risk-Free",
   highlight: false,

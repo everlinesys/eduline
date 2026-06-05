@@ -359,7 +359,7 @@ export default function Hero() {
                     48 Lessons • Certificates • Exams
                   </p>
 
-                  <button
+                  <button onClick={() => (window.location.href = "/onboard")}
                     className="
                       mt-5
                       w-full

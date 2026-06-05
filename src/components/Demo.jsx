@@ -40,7 +40,7 @@ export default function Demo() {
   return (
     <section
       className="relative py-28 bg-[#f7faf8] overflow-hidden"
-      id="Demos"
+      id="Demo"
     >
       {/* Background */}
 

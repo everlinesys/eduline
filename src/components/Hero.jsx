@@ -1,393 +1,279 @@
-import { ArrowRight, Sparkles, Play } from "lucide-react";
+
+import { ArrowRight, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#f7faf8] pt-28 pb-24">
+    <section className="bg-[#F4F7F4] pt-20 pb-12 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
 
-      {/* Background */}
+        {/* HERO CARD */}
 
-      <div
-        className="absolute inset-0 opacity-40"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(16,185,129,.05) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(16,185,129,.05) 1px, transparent 1px)
-          `,
-          backgroundSize: "48px 48px",
-        }}
-      />
+        <div
+          className="
+            relative
+            bg-gradient-to-br
+            from-[#065F46]
+            via-[#064E3B]
+            to-[#043427]
+            rounded-[48px]
+            overflow-hidden
+            shadow-[0_40px_120px_rgba(0,0,0,.15)]
+          "
+        >
+          {/* Background Shapes */}
 
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-emerald-200/40 blur-3xl rounded-full" />
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-      <div className="relative max-w-7xl mx-auto px-6">
+            <div
+              className="
+                absolute
+                -top-32
+                left-1/2
+                -translate-x-1/2
+                w-[1000px]
+                h-[400px]
+                bg-emerald-400/10
+                blur-[120px]
+                rounded-full
+              "
+            />
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div
+              className="
+                absolute
+                bottom-0
+                left-0
+                w-[500px]
+                h-[500px]
+                bg-emerald-500/10
+                blur-[100px]
+                rounded-full
+              "
+            />
 
-          {/* LEFT */}
+          </div>
 
-          <div>
+          {/* CONTENT */}
+
+          <div className="relative z-10 text-center px-8 pt-8">
+
+            {/* Badge */}
 
             <div
               className="
                 inline-flex
                 items-center
-                gap-2
                 px-4
                 py-2
-                bg-white
-                border-2
-                border-slate-900
                 rounded-full
-                shadow-[4px_4px_0_0_rgba(15,23,42,.15)]
-              "
-            >
-              <Sparkles size={14} />
-
-              <span
-                className="
-                  text-xs
-                  font-black
-                  uppercase
-                  tracking-widest
-                "
-              >
-                Built For Educators
-              </span>
-            </div>
-
-            <h1
-              className="
-                mt-8
-                text-5xl
-                sm:text-6xl
-                lg:text-7xl
-                font-black
-                tracking-tight
-                leading-[0.95]
-                text-slate-900
-              "
-            >
-              Launch Your
-              <br />
-
-              <span className="text-emerald-600">
-                Own Academy.
-              </span>
-            </h1>
-
-            <p
-              className="
-                mt-8
-                text-lg
-                md:text-xl
-                text-slate-600
-                max-w-xl
-                leading-relaxed
+                bg-white/10
+                border
+                border-white/10
+                backdrop-blur-sm
+                text-emerald-100
+                text-sm
                 font-medium
               "
             >
-              Create a branded learning platform with courses,
-              certificates, exams, student management,
-              mobile apps and online payments.
-            </p>
+              Trusted by educators and training businesses
+            </div>
+
+            {/* Headline */}
+
+            <h1
+              className="
+                mt-5
+                text-5xl
+                md:text-7xl
+                font-semibold
+                tracking-[-0.05em]
+                leading-[0.95]
+                text-white
+                max-w-5xl
+                mx-auto
+                poppins
+              "
+            >
+              Create a learning business,
+              <span className="block text-emerald-300">
+                not just courses.
+              </span>
+            </h1>
+
+
+
+            {/* CTA */}
 
             <div
               className="
-                mt-10
+                mt-5
                 flex
                 flex-col
                 sm:flex-row
+                justify-center
                 gap-4
               "
             >
-
               <Link
                 to="/onboard"
                 className="
-                  bg-emerald-500
-                  border-2
-                  border-slate-900
-                  rounded-2xl
-                  px-8
-                  py-4
-                  font-black
-                  flex
+                  inline-flex
                   items-center
                   justify-center
-                  gap-3
-                  shadow-[5px_5px_0_0_rgba(15,23,42,1)]
-                  hover:translate-x-1
-                  hover:translate-y-1
-                  hover:shadow-none
+                  gap-2
+                  px-19
+                  py-3
+                  rounded-full
+                  bg-emerald-300
+                  hover:bg-emerald-200
+                  text-white
+                  font-semibold
                   transition-all
                 "
-                style={{ color: "white" }}
+                style={{ color: "black", fontSize: "15px", fontWeight: "500" }}
               >
                 Start Free
+
                 <ArrowRight size={18} />
               </Link>
 
-              <a
-                href="#demo"
+              {/* <button
                 className="
-                  bg-white
-                  border-2
-                  border-slate-900
-                  rounded-2xl
-                  px-8
-                  py-4
-                  font-black
-                  flex
+                  inline-flex
                   items-center
                   justify-center
-                  gap-3
-                  shadow-[5px_5px_0_0_rgba(15,23,42,.15)]
+                  gap-2
+                  px-8
+                  py-4
+                  rounded-full
+                  bg-white/10
+                  border
+                  border-white/10
+                  text-white
+                  backdrop-blur-sm
+                  hover:bg-white/15
+                  transition-all
                 "
               >
                 <Play size={16} />
-                Watch Demo
-              </a>
-
+                Book Demo
+              </button> */}
             </div>
 
-            {/* Stats */}
+            <p className="mt-4 text-sm text-emerald-100/50">
+              No credit card required
+            </p>
 
-            <div
+            {/* Social Proof */}
+
+            {/* <div
               className="
-                mt-12
-                grid
-                grid-cols-3
-                gap-4
-                max-w-lg
+                mt-10
+                flex
+                justify-center
+                gap-10
+                text-center
+                flex-wrap
               "
             >
-
-              <div
-                className="
-                  bg-white
-                  border-2
-                  border-slate-900
-                  rounded-2xl
-                  p-4
-                "
-              >
-                <div className="text-2xl font-black">
+              <div>
+                <div className="text-2xl font-bold text-white">
                   500+
                 </div>
-
-                <div className="text-xs text-slate-500 font-medium">
+                <div className="text-sm text-emerald-100/60">
                   Academies
                 </div>
               </div>
 
-              <div
-                className="
-                  bg-white
-                  border-2
-                  border-slate-900
-                  rounded-2xl
-                  p-4
-                "
-              >
-                <div className="text-2xl font-black">
+              <div>
+                <div className="text-2xl font-bold text-white">
                   50K+
                 </div>
-
-                <div className="text-xs text-slate-500 font-medium">
-                  Students
+                <div className="text-sm text-emerald-100/60">
+                  Learners
                 </div>
               </div>
 
-              <div
-                className="
-                  bg-white
-                  border-2
-                  border-slate-900
-                  rounded-2xl
-                  p-4
-                "
-              >
-                <div className="text-2xl font-black">
+              <div>
+                <div className="text-2xl font-bold text-white">
                   99.9%
                 </div>
-
-                <div className="text-xs text-slate-500 font-medium">
+                <div className="text-sm text-emerald-100/60">
                   Uptime
                 </div>
               </div>
-
-            </div>
+            </div> */}
 
           </div>
 
-          {/* RIGHT */}
+          {/* DASHBOARD */}
 
-          <div className="relative">
-
-            {/* Floating Badge */}
+          <div className="relative z-10 mt-5 px-6 md:px-12">
 
             <div
               className="
-                absolute
-                -top-4
-                -left-4
-                z-20
-                bg-emerald-400
-                border-2
-                border-slate-900
-                px-4
-                py-2
-                rounded-2xl
-                font-black
-                text-sm
-                shadow-[5px_5px_0_0_rgba(15,23,42,1)]
-              "
-            >
-              +42,000 Students
-            </div>
-
-            {/* Main Mockup */}
-
-            <div
-              className="
-                bg-white
-                border-2
-                border-slate-900
-                rounded-[32px]
+                rounded-t-[32px]
                 overflow-hidden
-                shadow-[10px_10px_0_0_rgba(15,23,42,.15)]
+                border
+                border-white/10
+                shadow-[0_20px_80px_rgba(0,0,0,.25)]
+                bg-white
               "
             >
-
               {/* Browser */}
 
               <div
                 className="
                   h-12
-                  border-b-2
-                  border-slate-900
                   bg-slate-50
+                  border-b
+                  border-slate-200
                   flex
                   items-center
                   px-5
-                  gap-2
                 "
               >
-                <div className="w-3 h-3 rounded-full bg-red-400" />
-                <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                <div className="w-3 h-3 rounded-full bg-emerald-400" />
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-400" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                  <div className="w-3 h-3 rounded-full bg-green-400" />
+                </div>
 
                 <div
                   className="
-                    ml-auto
+                    mx-auto
+                    text-xs
+                    text-slate-400
                     bg-white
                     border
                     border-slate-200
                     rounded-full
                     px-4
                     py-1
-                    text-xs
-                    text-slate-400
                   "
                 >
                   academy.yourbrand.com
                 </div>
-
               </div>
 
-              {/* Content */}
+              {/* REAL DASHBOARD IMAGE */}
 
-              <div className="p-6">
-
-                <div className="flex items-center justify-between mb-6">
-
-                  <div className="flex items-center gap-3">
-
-                    <div
-                      className="
-                        w-10
-                        h-10
-                        rounded-xl
-                        bg-emerald-500
-                        text-white
-                        flex
-                        items-center
-                        justify-center
-                        font-black
-                      "
-                    >
-                      E
-                    </div>
-
-                    <div>
-                      <div className="font-black">
-                        Your Academy
-                      </div>
-
-                      <div className="text-xs text-slate-500">
-                        Powered by Eduline
-                      </div>
-                    </div>
-
-                  </div>
-
-                  <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200" />
-
-                </div>
-
-                <img
-                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200"
-                  alt=""
-                  className="
-                    w-full
-                    h-64
-                    object-cover
-                    rounded-2xl
-                    border-2
-                    border-slate-900
-                  "
-                />
-
-                <div className="mt-6">
-
-                  <h3 className="text-2xl font-black">
-                    Digital Marketing Masterclass
-                  </h3>
-
-                  <p className="text-slate-500 mt-2">
-                    48 Lessons • Certificates • Exams
-                  </p>
-
-                  <button onClick={() => (window.location.href = "/onboard")}
-                    className="
-                      mt-5
-                      w-full
-                      bg-emerald-500
-                      border-2
-                      border-slate-900
-                      rounded-2xl
-                      py-4
-                      font-black
-                      text-white
-                      shadow-[4px_4px_0_0_rgba(15,23,42,1)]
-                    "
-                  >
-                    Enroll Now
-                  </button>
-
-                </div>
-
-              </div>
-
+              <img
+                src="/eduline-dashboard.png"
+                alt="Eduline Dashboard"
+                className="
+                  w-full
+                  max-h-[500px]
+                  object-cover
+                  object-top
+                "
+              />
             </div>
-
           </div>
 
         </div>
-
       </div>
-
     </section>
   );
 }

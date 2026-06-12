@@ -4,6 +4,7 @@ import {
   ArrowRight,
   GraduationCap,
   ShieldCheck,
+  Loader2
 } from "lucide-react";
 import api from "../shared/api";
 
@@ -14,11 +15,10 @@ export default function Login() {
 
   async function findPortal(e) {
     e.preventDefault();
-
     setError("");
 
     if (!email.trim()) {
-      setError("Email is required");
+      setError("Email address is required");
       return;
     }
 
@@ -27,21 +27,18 @@ export default function Login() {
 
       const res = await api.post(
         "/saas/find-portal",
-        {
-          email,
-        }
+        { email }
       );
 
       if (!res.data?.portal) {
         throw new Error("Portal not found");
       }
 
-      window.location.href =
-        res.data.portal + "/login";
+      window.location.href = res.data.portal + "/login";
     } catch (err) {
       setError(
         err.response?.data?.message ||
-          "No academy found for this email"
+          "No registered academy matches this email address"
       );
     } finally {
       setLoading(false);
@@ -49,197 +46,142 @@ export default function Login() {
   }
 
   return (
-    <section className="relative min-h-screen bg-[#f7faf8] pt-40 overflow-hidden flex items-center justify-center py-20 px-6">
+    <section className="relative min-h-screen bg-slate-50 w-[100vw] overflow-hidden flex items-center justify-center py-24 px-6">
+      
+      {/* Background Soft Glow Layers */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[600px] bg-emerald-500/5 blur-[140px] rounded-full" />
+      </div>
 
-      {/* Background */}
-
-      <div
-        className="absolute inset-0 opacity-40"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(16,185,129,.05) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(16,185,129,.05) 1px, transparent 1px)
-          `,
-          backgroundSize: "48px 48px",
-        }}
-      />
-
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[700px] bg-emerald-200/30 blur-3xl rounded-full" />
-
-      <div className="relative w-full max-w-6xl">
-
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
-
-          {/* LEFT */}
-
-          <div className="hidden lg:block">
-
-            <div
-              className="
-                bg-white
-                border-2
-                border-slate-900
-                rounded-[40px]
-                p-10
-                shadow-[10px_10px_0_0_rgba(15,23,42,.08)]
-              "
-            >
-
-              <div
-                className="
-                  w-20
-                  h-20
-                  rounded-[24px]
-                  bg-emerald-500
-                  border-2
-                  border-slate-900
-                  flex
-                  items-center
-                  justify-center
-                  shadow-[6px_6px_0_0_rgba(15,23,42,1)]
-                "
-              >
-                <GraduationCap
-                  size={40}
-                  className="text-white"
-                />
+      <div className="relative w-full max-w-5xl z-10">
+        <div className="grid lg:grid-cols-12 gap-8 items-center">
+          
+          {/* LEFT COLUMN: Strategic Brand Assurance */}
+          <div className="hidden lg:block lg:col-span-5 space-y-6">
+            <div className="bg-white border border-slate-200 rounded-[2rem] p-8 shadow-sm">
+              <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center border border-slate-100">
+                <GraduationCap size={24} className="text-emerald-700" />
               </div>
 
-              <h1 className="mt-8 text-5xl font-black text-slate-900 leading-none">
-                Find Your
-                <span className="block text-emerald-600">
-                  Academy
-                </span>
+              <h1 className="mt-6 poppins text-4xl font-normal tracking-tight text-slate-900 leading-tight">
+                Find your <br />
+                <span className="text-emerald-700  ">learning space</span>
               </h1>
 
-              <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-                Enter your email address and we'll
-                automatically locate your learning portal.
+              <p className="mt-3 text-sm text-slate-500 leading-relaxed">
+                Provide your workspace registration email address. Our unified routing matrix will instantly map your identity to your portal landing.
               </p>
 
-              <div className="mt-10 space-y-4">
-
+              <div className="mt-8 space-y-2.5">
                 {[
-                  "Direct portal access",
-                  "Secure academy login",
-                  "Works across all Eduline academies",
-                  "No need to remember URLs",
+                  "Direct secure environment handoff",
+                  "Encrypted multi-tenant identification",
+                  "Cross-architecture mapping network",
+                  "Zero memorized subdomains required",
                 ].map((item, i) => (
                   <div
                     key={i}
                     className="
                       flex
                       items-center
-                      gap-4
-                      bg-emerald-50
+                      gap-3
+                      bg-slate-50
                       border
-                      border-emerald-100
-                      rounded-2xl
-                      p-4
+                      border-slate-100
+                      rounded-xl
+                      px-4
+                      py-3
+                      text-xs
+                      font-medium
+                      text-slate-600
                     "
                   >
-                    <ShieldCheck
-                      size={18}
-                      className="text-emerald-600"
-                    />
-
-                    <span className="font-semibold text-slate-700">
-                      {item}
-                    </span>
+                    <ShieldCheck size={14} className="text-emerald-600 shrink-0 stroke-[2.5]" />
+                    <span>{item}</span>
                   </div>
                 ))}
-
               </div>
-
             </div>
-
           </div>
 
-          {/* RIGHT */}
-
+          {/* RIGHT COLUMN: Interactive Form Access Point */}
           <div
             className="
+              lg:col-span-7
               bg-white
-              border-2
-              border-slate-900
-              rounded-[40px]
+              border
+              border-slate-200
+              rounded-[2.5rem]
               p-8
               md:p-10
-              shadow-[10px_10px_0_0_rgba(15,23,42,.08)]
+              shadow-md
             "
           >
-
             <div className="text-center mb-8">
-
               <div
                 className="
-                  w-16
-                  h-16
+                  w-12
+                  h-12
                   mx-auto
-                  rounded-[20px]
-                  bg-emerald-500
-                  border-2
-                  border-slate-900
+                  rounded-2xl
+                  bg-emerald-50
+                  border
+                  border-emerald-100
                   flex
                   items-center
                   justify-center
-                  shadow-[5px_5px_0_0_rgba(15,23,42,1)]
-                  mb-6
+                  mb-4
                 "
               >
-                <Search
-                  size={28}
-                  className="text-white"
-                />
+                <Search size={18} className="text-emerald-700" />
               </div>
 
-              <h2 className="text-3xl font-black text-slate-900">
-                Find My Academy
+              <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+                Lookup Academy Portal
               </h2>
 
-              <p className="mt-3 text-slate-500">
-                Enter the email you used when enrolling.
+              <p className="text-sm text-slate-400 mt-1">
+                Input your institutional or profile email below
               </p>
-
             </div>
 
-            <form
-              onSubmit={findPortal}
-              className="space-y-5"
-            >
-
+            <form onSubmit={findPortal} className="space-y-5">
               <div>
-
-                <label className="block mb-2 font-black text-slate-900">
+                <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
                   Email Address
                 </label>
 
                 <input
                   type="email"
                   value={email}
-                  onChange={(e) =>
-                    setEmail(e.target.value)
-                  }
-                  placeholder="you@example.com"
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="name@organization.com"
                   className="
                     w-full
-                    px-5
-                    py-4
-                    rounded-2xl
-                    border-2
-                    border-slate-900
-                    bg-white
-                    outline-none
+                    px-4
+                    py-3.5
+                    rounded-xl
+                    border
+                    border-slate-200
+                    bg-slate-50/50
                     text-slate-900
+                    text-sm
+                    placeholder-slate-400
+                    focus:bg-white
+                    focus:border-emerald-600
+                    focus:ring-1
+                    focus:ring-emerald-600
+                    outline-none
+                    transition-all
                   "
                 />
 
                 {error && (
-                  <p className="text-red-500 text-sm mt-3">
+                  <p className="text-red-500 text-xs font-medium mt-2.5 flex items-center gap-1.5">
+                    <span className="w-1 h-1 rounded-full bg-red-500 inline-block shrink-0" />
                     {error}
                   </p>
                 )}
-
               </div>
 
               <button
@@ -247,62 +189,68 @@ export default function Login() {
                 disabled={loading}
                 className="
                   w-full
-                  bg-emerald-500
-                  border-2
-                  border-slate-900
-                  rounded-2xl
-                  py-4
-                  font-black
+                  bg-[#04281c]
+                  hover:bg-[#021811]
+                  disabled:bg-slate-800
                   text-white
+                  rounded-full
+                  py-4
+                  font-semibold
+                  text-sm
+                  tracking-wide
                   flex
                   items-center
                   justify-center
-                  gap-3
-                  shadow-[5px_5px_0_0_rgba(15,23,42,1)]
-                  hover:translate-x-1
-                  hover:translate-y-1
-                  hover:shadow-none
+                  gap-2
                   transition-all
-                  disabled:opacity-50
+                  shadow-sm
+                  hover:shadow-md
+                  disabled:opacity-40
+                  disabled:cursor-not-allowed
                 "
               >
-                {loading
-                  ? "Searching..."
-                  : "Find My Academy"}
-
-                {!loading && (
-                  <ArrowRight size={18} />
+                {loading ? (
+                  <>
+                    <Loader2 size={14} className="animate-spin stroke-[2.5]" />
+                    Searching Indexes...
+                  </>
+                ) : (
+                  <>
+                    Find My Academy
+                    <ArrowRight size={14} className="stroke-[2.5]" />
+                  </>
                 )}
               </button>
-
             </form>
 
-            <div className="mt-8 pt-8 border-t border-slate-200 text-center">
-
-              <p className="text-slate-500">
-                Are you an educator?
+            {/* Footer Workspace Action Switcher */}
+            <div className="mt-8 pt-6 border-t border-slate-100 text-center">
+              <p className="text-xs text-slate-400">
+                Deploying structural student content environments?
               </p>
 
               <a
                 href="/onboard"
                 className="
-                  inline-block
-                  mt-3
-                  font-black
-                  text-emerald-600
+                  inline-flex
+                  items-center
+                  gap-1
+                  mt-2
+                  text-xs
+                  font-bold
+                  text-emerald-700
+                  hover:text-emerald-800
+                  transition-colors
                 "
               >
-                Create Your Academy →
+                Establish Your Academy Infrastructure
+                <span className="text-sm font-normal">→</span>
               </a>
-
             </div>
 
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }

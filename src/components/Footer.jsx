@@ -3,300 +3,232 @@ import {
   GraduationCap,
   ShieldCheck,
   Award,
-  CreditCard,
-  BarChart3,
   BookOpen,
+  ArrowRight
 } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#f7faf8] border-t-2 border-slate-900 overflow-hidden">
+    <footer className="relative bg-slate-50 border-t border-slate-200 overflow-hidden w-[99vw]">
+      
+      {/* Premium Subtle Geometric Accent Blur */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-100/40 blur-[100px] rounded-full" />
+      </div>
 
-      {/* Background */}
+      <div className="relative max-w-7xl mx-auto px-6 z-10">
 
-      <div
-        className="absolute inset-0 opacity-40"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(16,185,129,.05) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(16,185,129,.05) 1px, transparent 1px)
-          `,
-          backgroundSize: "48px 48px",
-        }}
-      />
-
-      <div className="relative max-w-7xl mx-auto px-6">
-
-        {/* CTA */}
-
-        <div className="py-16">
-
+        {/* 
+          TalentLMS-Inspired CTA Box
+          Clean, rounded container with a high-contrast elegant inner layout
+        */}
+        <div className="pt-16">
           <div
             className="
-              bg-white
-              border-2
-              border-slate-900
-              rounded-[32px]
+              relative
+              bg-gradient-to-r from-[#04281c] to-[#021811]
+              text-white
+              rounded-[2rem]
               p-8
-              md:p-10
-              shadow-[10px_10px_0_0_rgba(15,23,42,.08)]
+              md:p-12
+              overflow-hidden
+              shadow-xl shadow-emerald-950/10
             "
           >
+            {/* Inner background flare */}
+            <div className="absolute -right-20 -top-20 w-80 h-80 bg-emerald-500/10 blur-[80px] rounded-full" />
 
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-
-              <div>
-
-                <div
-                  className="
-                    inline-flex
-                    items-center
-                    gap-2
-                    px-4
-                    py-2
-                    bg-emerald-50
-                    border-2
-                    border-slate-900
-                    rounded-full
-                    mb-4
-                  "
-                >
-                  <GraduationCap size={14} />
-
-                  <span className="text-xs font-black uppercase tracking-widest">
+            <div className="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 z-10">
+              <div className="max-w-2xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-900/50 border border-emerald-700/30 rounded-full mb-4">
+                  <GraduationCap size={14} className="text-emerald-400" />
+                  <span className="text-xs font-semibold uppercase tracking-wider text-emerald-300">
                     Start Today
                   </span>
                 </div>
 
-                <h2 className="text-3xl md:text-5xl font-black text-slate-900">
-                  Launch Your Academy
+                <h2 className="poppins text-3xl md:text-4xl font-normal tracking-tight text-white">
+                  Ready to launch your own online academy?
                 </h2>
 
-                <p className="mt-4 text-slate-600 text-lg max-w-xl">
-                  Create your own branded learning platform,
-                  sell courses and grow your education business.
+                <p className="mt-3 text-emerald-100/70 text-base md:text-lg leading-relaxed">
+                  Create custom branded environments, manage dynamic student pathways, 
+                  and scale your corporate or retail education business instantly.
                 </p>
-
               </div>
 
               <Link
                 to="/onboard"
                 className="
-                  bg-emerald-500
-                  border-2
-                  border-slate-900
-                  rounded-2xl
+                  inline-flex
+                  items-center
+                  gap-2
+                  bg-[#bbf7d0] 
+                  hover:bg-[#86efac]
+                  text-emerald-950
+                  rounded-full
                   px-8
                   py-4
-                  text-white
-                  font-black
+                  font-semibold
+                  text-base
                   whitespace-nowrap
-                  shadow-[5px_5px_0_0_rgba(15,23,42,1)]
-                  hover:translate-x-1
-                  hover:translate-y-1
-                  hover:shadow-none
                   transition-all
+                  duration-200
+                  shadow-md
+                  hover:shadow-lg
+                  w-full
+                  sm:w-auto
+                  justify-center
                 "
-                style={{ color: "white" }}
               >
                 Start Free
+                <ArrowRight size={16} className="stroke-[2.5]" />
               </Link>
-
             </div>
-
           </div>
-
         </div>
 
-        {/* Main Footer */}
+        {/* Main Links Footer Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 lg:gap-12 py-16 border-b border-slate-200">
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 py-12">
-
-          {/* Brand */}
-
-          <div className="lg:col-span-2">
-
-            <div className="flex items-center gap-4 mb-6">
-
+          {/* Brand Presentation Column */}
+          <div className="col-span-2 space-y-5">
+            <div className="flex items-center gap-3">
               <div
                 className="
-                  w-12
-                  h-12
-                  rounded-2xl
-                  bg-emerald-500
-                  border-2
-                  border-slate-900
+                  w-9
+                  h-9
+                  rounded-xl
+                  bg-emerald-600
                   flex
                   items-center
                   justify-center
-                  font-black
+                  poppins
+                  text-base
+                  font-semibold
                   text-white
-                  shadow-[4px_4px_0_0_rgba(15,23,42,1)]
                 "
               >
                 E
               </div>
-
               <div>
-
-                <div className="text-2xl font-black text-slate-900">
+                <div className="text-lg font-bold text-slate-900 tracking-tight">
                   EDULINE
                 </div>
-
-                <div className="text-xs uppercase tracking-widest text-slate-500">
-                  Learning Platform
+                <div className="text-[10px] uppercase font-semibold tracking-widest text-slate-400 -mt-0.5">
+                  Learning Management Platform
                 </div>
-
               </div>
-
             </div>
 
-            <p className="text-slate-600 max-w-md leading-relaxed">
-              A complete LMS platform for educators, coaching
-              institutes and training organizations to launch
-              branded online academies.
+            <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
+              A comprehensive white-label platform for enterprise training, academy management, and scalable learning tracks.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-
-              <div className="px-3 py-2 bg-white border-2 border-slate-900 rounded-full text-sm font-bold">
+            <div className="flex flex-wrap gap-1.5 pt-1">
+              <span className="px-2.5 py-1 bg-slate-200/60 text-slate-600 rounded-md text-xs font-medium">
                 White Label
-              </div>
-
-              <div className="px-3 py-2 bg-white border-2 border-slate-900 rounded-full text-sm font-bold">
-                Certificates
-              </div>
-
-              <div className="px-3 py-2 bg-white border-2 border-slate-900 rounded-full text-sm font-bold">
-                Exams
-              </div>
-
+              </span>
+              <span className="px-2.5 py-1 bg-slate-200/60 text-slate-600 rounded-md text-xs font-medium">
+                ISO Security
+              </span>
+              <span className="px-2.5 py-1 bg-slate-200/60 text-slate-600 rounded-md text-xs font-medium">
+                SCORM Compliant
+              </span>
             </div>
-
           </div>
 
-          {/* Platform */}
-
-          <div>
-
-            <h4 className="font-black text-slate-900 mb-6">
+          {/* Platform Navigation Group */}
+          <div className="col-span-1">
+            <h4 className="text-xs uppercase tracking-wider font-bold text-slate-800 mb-5">
               Platform
             </h4>
-
-            <div className="space-y-4">
-
-              <a href="#Platform" className="flex items-center gap-3 text-slate-600 hover:text-emerald-600 transition">
-                <BookOpen size={16} />
-                LMS Website
-              </a>
-
-              <a href="#Features" className="flex items-center gap-3 text-slate-600 hover:text-emerald-600 transition">
-                <Award size={16} />
-                Certificates
-              </a>
-
-              <a href="#Features" className="flex items-center gap-3 text-slate-600 hover:text-emerald-600 transition">
-                <ShieldCheck size={16} />
-                Secure Content
-              </a>
-
-            </div>
-
+            <ul className="space-y-3 text-sm">
+              <li>
+                <a href="#Platform" className="inline-flex items-center gap-2 text-slate-500 hover:text-emerald-600 transition-colors">
+                  <BookOpen size={14} className="text-slate-400" />
+                  LMS Ecosystem
+                </a>
+              </li>
+              <li>
+                <a href="#Features" className="inline-flex items-center gap-2 text-slate-500 hover:text-emerald-600 transition-colors">
+                  <Award size={14} className="text-slate-400" />
+                  Certifications
+                </a>
+              </li>
+              <li>
+                <a href="#Features" className="inline-flex items-center gap-2 text-slate-500 hover:text-emerald-600 transition-colors">
+                  <ShieldCheck size={14} className="text-slate-400" />
+                  Data Security
+                </a>
+              </li>
+            </ul>
           </div>
 
-          {/* Features */}
-
-          <div>
-
-            <h4 className="font-black text-slate-900 mb-6">
+          {/* Features Navigation Group */}
+          <div className="col-span-1">
+            <h4 className="text-xs uppercase tracking-wider font-bold text-slate-800 mb-5">
               Features
             </h4>
-
-            <div className="space-y-4">
-
-              <a href="#Features" className="block text-slate-600 hover:text-emerald-600 transition">
-                Video Courses
-              </a>
-
-              <a href="#Features" className="block text-slate-600 hover:text-emerald-600 transition">
-                Exams & Quizzes
-              </a>
-
-              <a href="#Features" className="block text-slate-600 hover:text-emerald-600 transition">
-                PDF Learning Materials
-              </a>
-
-              <a href="#Features" className="block text-slate-600 hover:text-emerald-600 transition">
-                Student Management
-              </a>
-
-            </div>
-
+            <ul className="space-y-3 text-sm text-slate-500">
+              <li>
+                <a href="#Features" className="hover:text-emerald-600 transition-colors">Course Builder</a>
+              </li>
+              <li>
+                <a href="#Features" className="hover:text-emerald-600 transition-colors">Testing & Surveys</a>
+              </li>
+              <li>
+                <a href="#Features" className="hover:text-emerald-600 transition-colors">Blended Learning</a>
+              </li>
+              <li>
+                <a href="#Features" className="hover:text-emerald-600 transition-colors">User Infographics</a>
+              </li>
+            </ul>
           </div>
 
-          {/* Company */}
-
-          <div>
-
-            <h4 className="font-black text-slate-900 mb-6">
+          {/* Corporate Legal & Communications Column */}
+          <div className="col-span-2 md:col-span-1">
+            <h4 className="text-xs uppercase tracking-wider font-bold text-slate-800 mb-5">
               Company
             </h4>
-
-            <div className="space-y-4">
-
-              <Link
-                to="/privacy-policy"
-                className="block text-slate-600 hover:text-emerald-600 transition"
-              >
-                Privacy Policy
-              </Link>
-
-              <Link
-                to="/terms-conditions"
-                className="block text-slate-600 hover:text-emerald-600 transition"
-              >
-                Terms & Conditions
-              </Link>
-
-              <a
-                href="mailto:contact@everlinesys.com"
-                className="block text-slate-600 hover:text-emerald-600 transition"
-              >
-                Contact
-              </a>
-
-            </div>
-
+            <ul className="space-y-3 text-sm text-slate-500">
+              <li>
+                <Link to="/privacy-policy" className="hover:text-emerald-600 transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms-conditions" className="hover:text-emerald-600 transition-colors">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <a href="mailto:contact@everlinesys.com" className="hover:text-emerald-600 transition-colors">
+                  Contact Support
+                </a>
+              </li>
+            </ul>
           </div>
 
         </div>
 
-        {/* Bottom */}
-
-        <div className="border-t-2 border-slate-900 py-8">
-
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-
-            <p className="text-sm text-slate-500">
-              © 2026 Eduline. All rights reserved.
+        {/* Bottom Metadata Bar */}
+        <div className="py-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+            <p>
+              &copy; 2026 Eduline Inc. All global rights reserved.
             </p>
 
-            <div className="flex items-center gap-3 text-sm text-slate-500">
-
-              <span>Powered by</span>
-
-              <span className="font-black text-slate-900">
+            <div className="flex items-center gap-1.5">
+              <span>Engineered with precision by</span>
+              <span className="font-semibold text-slate-700 tracking-tight">
                 Everline Systems
               </span>
-
             </div>
-
           </div>
-
         </div>
 
       </div>
-
     </footer>
   );
 }

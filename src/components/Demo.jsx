@@ -39,7 +39,7 @@ const projects = [
 export default function Demo() {
   return (
     <section
-      className="relative py-28 bg-[#f7faf8] overflow-hidden"
+      className="relative py-28 bg-[#f7faf8] overflow-hidden w-[100vw]"
       id="Demo"
     >
       {/* Background */}

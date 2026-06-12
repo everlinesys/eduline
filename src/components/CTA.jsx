@@ -1,18 +1,15 @@
-import { ArrowRight, GraduationCap, Sparkles } from "lucide-react";
+import { ArrowRight, GraduationCap, Sparkles, Calendar, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function CTA() {
   const sendWhatsApp = (type) => {
     const phone = "919400690911";
-
     let message = "";
 
     if (type === "start") {
-      message =
-        "Hello EduLine team 👋 I want to launch my own branded academy.";
+      message = "Hello EduLine team 👋 I want to launch my own branded academy.";
     } else {
-      message =
-        "Hello EduLine team 👋 I would like to schedule a demo of EduLine.";
+      message = "Hello EduLine team 👋 I would like to schedule a demo of EduLine.";
     }
 
     window.open(
@@ -22,231 +19,161 @@ export default function CTA() {
   };
 
   return (
-    <section className="relative py-28 bg-[#f7faf8] overflow-hidden">
-
-      {/* Background */}
-
-      <div
-        className="absolute inset-0 opacity-40"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(16,185,129,.05) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(16,185,129,.05) 1px, transparent 1px)
-          `,
-          backgroundSize: "48px 48px",
-        }}
-      />
-
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[700px] bg-emerald-200/30 blur-3xl rounded-full" />
+    <section className="relative py-24 bg-slate-50 overflow-hidden ">
+      {/* Background Subtle Gradient Flare */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[500px] bg-emerald-500/5 blur-[130px] rounded-full" />
+      </div>
 
       <div className="relative max-w-6xl mx-auto px-6">
-
         <div
           className="
             bg-white
-            border-2
-            border-slate-900
-            rounded-[40px]
+            border border-slate-200
+            rounded-[2.5rem]
             overflow-hidden
-            shadow-[12px_12px_0_0_rgba(15,23,42,.08)]
+            shadow-xl shadow-slate-200/50
           "
         >
-
-          <div className="grid lg:grid-cols-2">
-
-            {/* Left */}
-
-            <div className="p-10 md:p-14">
-
-              <div
-                className="
-                  inline-flex
-                  items-center
-                  gap-2
-                  px-4
-                  py-2
-                  bg-emerald-50
-                  border-2
-                  border-slate-900
-                  rounded-full
-                  mb-8
-                "
-              >
-                <Sparkles size={14} />
-
-                <span className="text-xs font-black uppercase tracking-widest">
-                  Start Your Academy
-                </span>
+          <div className="grid lg:grid-cols-12">
+            
+            {/* Left Column (Brand Proposition) */}
+            <div className="lg:col-span-7 p-8 md:p-14 flex flex-col justify-center">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 border border-emerald-200/60 rounded-full mb-6">
+                  <Sparkles size={13} className="text-emerald-600 fill-current" />
+                  <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800">
+                    Start Your Academy
+                  </span>
+                </div>
               </div>
 
-              <h2
-                className="
-                  text-4xl
-                  md:text-6xl
-                  font-black
-                  tracking-tight
-                  leading-[1]
-                  text-slate-900
-                "
-              >
-                Ready To Build
-                <span className="block text-emerald-600">
-                  Your Own Brand?
-                </span>
+              <h2 className=" text-4xl sm:text-5xl font-bold text-slate-900">
+                Ready to build <br />
+                <span className="text-emerald-700 ">your own platform?</span>
               </h2>
 
-              <p
-                className="
-                  mt-6
-                  text-lg
-                  text-slate-600
-                  leading-relaxed
-                  max-w-lg
-                "
-              >
-                Launch a professional learning platform with
-                courses, certificates, exams, payments and
-                student management — fully under your brand.
+              <p className="mt-5 text-base sm:text-lg text-slate-500 leading-relaxed max-w-lg">
+                Launch a professional enterprise environment configured with structured learning tracks, automated certifications, online payment processing pathways, and real-time user insights—fully engineered under your corporate brand.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mt-10">
-
+              <div className="flex flex-col sm:flex-row gap-3.5 mt-8">
                 <Link
                   to="/onboard"
                   className="
-                    bg-emerald-500
-                    border-2
-                    border-slate-900
-                    rounded-2xl
-                    px-8
-                    py-4
-                    font-black
-                    text-white
-                    flex
+                    inline-flex
                     items-center
                     justify-center
-                    gap-3
-                    shadow-[5px_5px_0_0_rgba(15,23,42,1)]
-                    hover:translate-x-1
-                    hover:translate-y-1
-                    hover:shadow-none
+                    gap-2
+                    bg-[#04281c]
+                    hover:bg-[#021811]
+                    text-white
+                    rounded-full
+                    px-8
+                    py-4
+                    font-semibold
+                    text-base
                     transition-all
+                    shadow-sm
+                    hover:shadow-md
                   "
-                  style={{ color: "white" }}
                 >
                   Start Free
-                  <ArrowRight size={18} />
+                  <ArrowRight size={16} className="stroke-[2.5]" />
                 </Link>
 
                 <button
                   onClick={() => sendWhatsApp("demo")}
                   className="
-                    bg-white
-                    border-2
-                    border-slate-900
-                    rounded-2xl
+                    inline-flex
+                    items-center
+                    justify-center
+                    gap-2
+                    bg-slate-100
+                    hover:bg-slate-200/80
+                    text-slate-800
+                    rounded-full
                     px-8
                     py-4
-                    font-black
-                    hover:bg-slate-50
-                    transition
+                    font-semibold
+                    text-base
+                    transition-colors
                   "
                 >
+                  <Calendar size={16} className="text-slate-500" />
                   Book Demo
                 </button>
-
               </div>
-
             </div>
 
-            {/* Right */}
-
+            {/* Right Column (Feature Manifest Showcase) */}
             <div
               className="
-                bg-emerald-500
-                border-t-2
-                lg:border-t-0
-                lg:border-l-2
-                border-slate-900
-                p-10
+                lg:col-span-5
+                bg-gradient-to-b from-[#04281c] to-[#010d09]
+                p-8
                 md:p-14
                 flex
                 flex-col
                 justify-center
+                relative
               "
             >
+              {/* Radial gradient spotlight */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-[60px] rounded-full pointer-events-none" />
 
-              <div
-                className="
-                  w-20
-                  h-20
-                  bg-white
-                  border-2
-                  border-slate-900
-                  rounded-[24px]
-                  flex
-                  items-center
-                  justify-center
-                  shadow-[6px_6px_0_0_rgba(15,23,42,1)]
-                "
-              >
-                <GraduationCap
-                  size={38}
-                  className="text-slate-900"
-                />
+              <div className="relative z-10">
+                <div className="w-14 h-14 bg-emerald-950/40 border border-emerald-800/30 rounded-2xl flex items-center justify-center mb-6 shadow-inner">
+                  <GraduationCap size={28} className="text-emerald-400" />
+                </div>
+
+                <h3 className="text-2xl font-bold tracking-tight text-white mb-2">
+                  Everything Included
+                </h3>
+                <p className="text-sm text-emerald-300/60 mb-6">
+                  No hidden deployment adjustments, no surprises.
+                </p>
+
+                <div className="space-y-2.5">
+                  {[
+                    "Professional LMS Ecosystem",
+                    "Unlimited Courses & Modules",
+                    "HD Video & Document Assets",
+                    "Automated Testing & Certifications",
+                    "Granular Student Control Pathing",
+                    "Direct Financial Payment Gates",
+                    "White-label Domain Mapping",
+                    "Analytics & Performance Dashboards",
+                  ].map((item, i) => (
+                    <div
+                      key={i}
+                      className="
+                        flex
+                        items-center
+                        gap-3
+                        bg-emerald-950/30
+                        border
+                        border-emerald-800/20
+                        rounded-xl
+                        px-4
+                        py-3
+                        text-sm
+                        font-medium
+                        text-emerald-100/90
+                        backdrop-blur-sm
+                      "
+                    >
+                      <Check size={14} className="text-emerald-400 shrink-0 stroke-[3]" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-
-              <h3
-                className="
-                  mt-8
-                  text-3xl
-                  md:text-4xl
-                  font-black
-                  text-slate-900
-                "
-              >
-                Everything Included
-              </h3>
-
-              <div className="mt-8 space-y-4">
-
-                {[
-                  "Professional LMS Website",
-                  "Unlimited Courses & Lessons",
-                  "Video & PDF Learning",
-                  "Certificates & Exams",
-                  "Student Management",
-                  "Direct Online Payments",
-                  "Custom Domain & Branding",
-                  "Analytics Dashboard",
-                ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="
-                      bg-white/80
-                      border
-                      border-slate-900
-                      rounded-2xl
-                      px-4
-                      py-3
-                      font-bold
-                      text-slate-900
-                    "
-                  >
-                    ✓ {item}
-                  </div>
-                ))}
-
-              </div>
-
             </div>
 
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }

@@ -12,14 +12,14 @@ import Demo from './components/Demo';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900 w-100vw overflow-x-hidden">
+    <div className="min-h-screen bg-white font-sans text-slate-900 w-100vw overflow-x-hidden poppins">
       {/* <Navbar /> */}
       <Hero />
-      <DemoVideo />
+      {/* <DemoVideo />
       <Demo />
       <Features />
       <WhyEduline />
-      <Platform />
+      <Platform /> */}
       <CTA />
       <Pricing />
       <Contact />

@@ -1,14 +1,46 @@
-
 import { ArrowRight, Play } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 export default function Hero() {
+  // 1. Array of 3 different title slides
+  const slides = [
+    {
+      text: "Create a learning business,",
+      highlight: "not just courses.",
+    },
+    {
+      text: "Scale your academy,",
+      highlight: "without the tech headaches.",
+    },
+    {
+      text: "Empower your learners,",
+      highlight: "and own your brand.",
+    },
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  // 2. Auto-advance slides every 3 seconds with a quick fade effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      
+      setTimeout(() => {
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+        setIsTransitioning(false);
+      }, 300); // Dynamic transition duration matching standard durations
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
   return (
     <section className="bg-[#F4F7F4] pt-20 pb-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* HERO CARD */}
-
         <div
           className="
             relative
@@ -22,9 +54,7 @@ export default function Hero() {
           "
         >
           {/* Background Shapes */}
-
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-
             <div
               className="
                 absolute
@@ -38,7 +68,6 @@ export default function Hero() {
                 rounded-full
               "
             />
-
             <div
               className="
                 absolute
@@ -51,15 +80,12 @@ export default function Hero() {
                 rounded-full
               "
             />
-
           </div>
 
           {/* CONTENT */}
-
           <div className="relative z-10 text-center px-8 pt-8">
 
             {/* Badge */}
-
             <div
               className="
                 inline-flex
@@ -79,10 +105,9 @@ export default function Hero() {
               Trusted by educators and training businesses
             </div>
 
-            {/* Headline */}
-
+            {/* Headline with Auto-Sliding and Fade Effect */}
             <h1
-              className="
+              className={`
                 mt-5
                 text-5xl
                 md:text-7xl
@@ -93,18 +118,18 @@ export default function Hero() {
                 max-w-5xl
                 mx-auto
                 poppins
-              "
+                transition-all
+                duration-300
+                ${isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"}
+              `}
             >
-              Create a learning business,
+              {slides[currentSlide].text}{" "}
               <span className="block text-emerald-300">
-                not just courses.
+                {slides[currentSlide].highlight}
               </span>
             </h1>
 
-
-
             {/* CTA */}
-
             <div
               className="
                 mt-5
@@ -134,83 +159,18 @@ export default function Hero() {
                 style={{ color: "black", fontSize: "15px", fontWeight: "500" }}
               >
                 Start Free
-
                 <ArrowRight size={18} />
               </Link>
-
-              {/* <button
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  gap-2
-                  px-8
-                  py-4
-                  rounded-full
-                  bg-white/10
-                  border
-                  border-white/10
-                  text-white
-                  backdrop-blur-sm
-                  hover:bg-white/15
-                  transition-all
-                "
-              >
-                <Play size={16} />
-                Book Demo
-              </button> */}
             </div>
 
             <p className="mt-4 text-sm text-emerald-100/50">
               No credit card required
             </p>
 
-            {/* Social Proof */}
-
-            {/* <div
-              className="
-                mt-10
-                flex
-                justify-center
-                gap-10
-                text-center
-                flex-wrap
-              "
-            >
-              <div>
-                <div className="text-2xl font-bold text-white">
-                  500+
-                </div>
-                <div className="text-sm text-emerald-100/60">
-                  Academies
-                </div>
-              </div>
-
-              <div>
-                <div className="text-2xl font-bold text-white">
-                  50K+
-                </div>
-                <div className="text-sm text-emerald-100/60">
-                  Learners
-                </div>
-              </div>
-
-              <div>
-                <div className="text-2xl font-bold text-white">
-                  99.9%
-                </div>
-                <div className="text-sm text-emerald-100/60">
-                  Uptime
-                </div>
-              </div>
-            </div> */}
-
           </div>
 
           {/* DASHBOARD */}
-
           <div className="relative z-10 mt-5 px-6 md:px-12">
-
             <div
               className="
                 rounded-t-[32px]
@@ -221,8 +181,7 @@ export default function Hero() {
                 bg-white
               "
             >
-              {/* Browser */}
-
+              {/* Browser Head */}
               <div
                 className="
                   h-12
@@ -258,9 +217,8 @@ export default function Hero() {
               </div>
 
               {/* REAL DASHBOARD IMAGE */}
-
               <img
-                src="/eduline-dashboard.png"
+                src="/eduline-dashboard.jpg"
                 alt="Eduline Dashboard"
                 className="
                   w-full

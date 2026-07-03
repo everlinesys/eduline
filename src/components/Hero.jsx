@@ -11,7 +11,7 @@ export default function Hero() {
     },
     {
       text: "Scale your academy,",
-      highlight: "without the tech headaches.",
+      highlight: "without the tech burden.",
     },
     {
       text: "Empower your learners,",
@@ -37,7 +37,7 @@ export default function Hero() {
   }, [slides.length]);
 
   return (
-    <section className="h-[100vh] bg-[#F4F7F4] pt-20 pb-12 overflow-hidden">
+    <section className=" bg-[#F4F7F4] pt-20 pb-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* HERO CARD */}
@@ -110,18 +110,21 @@ export default function Hero() {
             <h1
               className={`
                 mt-5
-                text-5xl
-                md:text-7xl
+                text-4xl
+                md:text-6xl
                 font-semibold
                 tracking-[-0.05em]
                 leading-[0.95]
                 text-white
-                max-w-5xl
+                
                 mx-auto
                 poppins
                 transition-all
-                duration-300 min-h-[250px]
+                duration-300 
+                h-[350px]
+                md:h-auto
                 ${isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"}
+                overflow-hidden
               `}
             >
               {slides[currentSlide].text}{" "}

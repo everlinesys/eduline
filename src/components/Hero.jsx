@@ -37,7 +37,7 @@ export default function Hero() {
   }, [slides.length]);
 
   return (
-    <section className="bg-[#F4F7F4] pt-20 pb-12 overflow-hidden">
+    <section className="h-[100vh] bg-[#F4F7F4] pt-20 pb-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* HERO CARD */}
@@ -51,6 +51,7 @@ export default function Hero() {
             rounded-[48px]
             overflow-hidden
             shadow-[0_40px_120px_rgba(0,0,0,.15)]
+            
           "
         >
           {/* Background Shapes */}
@@ -119,7 +120,7 @@ export default function Hero() {
                 mx-auto
                 poppins
                 transition-all
-                duration-300
+                duration-300 min-h-[250px]
                 ${isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"}
               `}
             >
